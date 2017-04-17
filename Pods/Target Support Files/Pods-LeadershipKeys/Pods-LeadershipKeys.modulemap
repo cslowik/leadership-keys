@@ -1,0 +1,6 @@
+framework module Pods_LeadershipKeys {
+  umbrella header "Pods-LeadershipKeys-umbrella.h"
+
+  export *
+  module * { export * }
+}

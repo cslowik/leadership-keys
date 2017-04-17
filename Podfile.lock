@@ -1,0 +1,18 @@
+PODS:
+  - AMScrollingNavbar (3.2.0)
+  - Pages (1.0.0)
+  - SideMenu (2.3.1)
+
+DEPENDENCIES:
+  - AMScrollingNavbar
+  - Pages
+  - SideMenu
+
+SPEC CHECKSUMS:
+  AMScrollingNavbar: cf603d4d5f11061d466a0878b9ada136248927b2
+  Pages: f3718e6f03a5e2787f6b0bff4becb3c7c19bcebc
+  SideMenu: 2a3c3da0b3d5f78a047b2271bb7398260fcd7e3d
+
+PODFILE CHECKSUM: fef953dff9ac2cb2470dfeae91e1d7980cb7ae6b
+
+COCOAPODS: 1.2.1
