@@ -47,8 +47,6 @@ class ArticleVC: UIPageViewController {
         performSegue(withIdentifier: "showMenu", sender: self)
     }
     
-    
-    
 }
 
 

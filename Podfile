@@ -10,5 +10,6 @@ target 'LeadershipKeys' do
   pod 'SideMenu'
   pod "MarkdownKit"
   pod 'SnapKit', '~> 3.0'
+  pod 'Pages'
 
 end
