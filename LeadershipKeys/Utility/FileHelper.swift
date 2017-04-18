@@ -15,7 +15,7 @@ class FileHelper {
     var chapters: [[String:String]]
     
     init() {
-        chapters = [["title" : "Chapter One", "index" : "CH 1"]]
+        chapters = [["title" : "Chapter One", "subtitle" : "CH 1"]]
     }
     
     func readChapters() {

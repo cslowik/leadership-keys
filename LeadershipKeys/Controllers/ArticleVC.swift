@@ -10,24 +10,25 @@ import UIKit
 
 class ArticleVC: UIPageViewController {
     
-    private(set) lazy var chapterViewControllers: [UIViewController] = {
-        return [ChapterVC.generate(0)]
+    private(set) lazy var chapterViewControllers: [ChapterVC] = {
+        var chapters: [ChapterVC] = []
+        for (chapterIndex, chapter) in FileHelper.main.chapters.enumerated() {
+            let newVC = ChapterVC(index: chapterIndex, title: chapter["title"]!, subtitle: chapter["subtitle"]!)
+            chapters.append(newVC)
+        }
+        return chapters
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.title = "Overview"
+        
         view.backgroundColor = UIColor.white
         
         dataSource = self
         
-        if let firstViewController = chapterViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-        }
+        setViewControllers([chapterViewControllers.first!], direction: .forward, animated: true, completion: nil)
+        navigationItem.title = chapterViewControllers.first?.chapterSubtitle
+        
     }
     
     @IBAction func contentsTapped(_ sender: Any) {

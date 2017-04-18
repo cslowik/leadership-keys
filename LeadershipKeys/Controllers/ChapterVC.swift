@@ -10,22 +10,26 @@ import UIKit
 
 class ChapterVC: UIViewController {
     
-    var chapterIndex: Int = -1
+    var chapterIndex: Int
+    var chapterTitle: String
+    var chapterSubtitle: String
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
-    class func generate(_ index: Int) -> UIViewController {
-        let newChapter = ChapterVC()
-        newChapter.chapterIndex = index
-        
-        if newChapter.chapterIndex == 0 {
-            newChapter.view.backgroundColor = UIColor.ebonyClay
-        }
-        
-        return newChapter
+    init(index: Int, title: String, subtitle: String) {
+        chapterIndex = index
+        chapterTitle = title
+        chapterSubtitle = subtitle
+        super.init(nibName: nil, bundle: nil)
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        chapterIndex = 0
+        chapterTitle = "No chapter"
+        chapterSubtitle = ""
+        super.init(coder: aDecoder)
+    }
+    
 }

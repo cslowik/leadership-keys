@@ -18,7 +18,6 @@ class MainVC: UIViewController {
         configureSideMenu()
         
         FileHelper.main.readChapters()
-        print(FileHelper.main.chapters)
     }
 
     func launch() {
