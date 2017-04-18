@@ -11,15 +11,13 @@ import AMScrollingNavbar
 
 class ScrollingNav: ScrollingNavigationController {
     
-    let titleFont = UIFont(name: "OpenSans-Regular", size: 18)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationBar.backgroundColor = UIColor.white
-        navigationBar.tintColor = UIColor(red:0.718, green:0.769, blue:0.796, alpha:1.000)
-        navigationBar.titleTextAttributes = [NSFontAttributeName: titleFont ?? UIFont.systemFont(ofSize: 18),
-                                             NSForegroundColorAttributeName: UIColor(red:0.149, green:0.188, blue:0.208, alpha:1.000)]
+        navigationBar.tintColor = UIColor.loblolly
+        navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.navFont,
+                                             NSForegroundColorAttributeName: UIColor.ebonyClay]
     }
 
     override func didReceiveMemoryWarning() {

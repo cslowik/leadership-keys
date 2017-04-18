@@ -44,9 +44,9 @@ class ContentsVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tocCell", for: indexPath) as! ContentsTableViewCell
         
         cell.chapterTitle.text  = titles[indexPath.row]
-        cell.chapterTitle.textColor = UIColor(red:0.110, green:0.141, blue:0.161, alpha:1.000)
+        cell.chapterTitle.textColor = UIColor.ebonyClay
         
-        cell.chapterIndex.textColor = UIColor(red:0.110, green:0.141, blue:0.161, alpha:1.000)
+        cell.chapterIndex.textColor = UIColor.ebonyClay
         if indexPath.row == 0 {
             cell.chapterIndex.text = "Overview"
         } else {
@@ -57,7 +57,7 @@ class ContentsVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cellBackground = UIColor(red:0.969, green:0.973, blue:0.980, alpha:1.000)
+        let cellBackground = UIColor.athensGray
         cell.backgroundColor = cellBackground
         
         if (indexPath as NSIndexPath).row % 2 != 0 {

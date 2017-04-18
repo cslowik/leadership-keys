@@ -49,8 +49,8 @@ extension MenuVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
         
         cell.backgroundColor = UIColor.clear
-        cell.textLabel?.font = UIFont(name: "Montserrat-Regular", size: 21)
-        cell.textLabel?.textColor = UIColor(red:0.110, green:0.141, blue:0.161, alpha:1.000)
+        cell.textLabel?.font = UIFont.menuFont
+        cell.textLabel?.textColor = UIColor.ebonyClay
         cell.textLabel?.text  = titles[indexPath.row]
         cell.selectionStyle = .none
         

@@ -12,7 +12,7 @@ class ContentsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var chapterTitle: UILabel!
     @IBOutlet weak var chapterIndex: UILabel!
-    
+    let indicatorDot = CAShapeLayer()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +23,7 @@ class ContentsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+        
     }
     
     func setup() {

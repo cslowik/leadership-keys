@@ -13,10 +13,6 @@ class ArticleVC: UIViewController, UIPopoverPresentationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menuIcon"), style: .plain, target: self, action: #selector(showMenu))
-        //navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "tocIcon"), style: .plain, target: self, action: #selector(showTOC))
-        //navigationController?.navigationBar.tintColor = UIColor.lightGray
         navigationItem.title = "Overview"
         
         view.backgroundColor = UIColor.white
@@ -29,22 +25,13 @@ class ArticleVC: UIViewController, UIPopoverPresentationControllerDelegate {
     }
     @IBAction func menuTapped(_ sender: Any) {
         print("menu")
-        performSegue(withIdentifier: "showMenu", sender: self)
+        showMenu()
     }
     
     func showTOC() {
         performSegue(withIdentifier: "showContents", sender: self)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMenu" {
-            let popoverVC = segue.destination
-            popoverVC.modalPresentationStyle = .popover
-            popoverVC.popoverPresentationController?.delegate = self
-        }
-    }
-    
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
+    func showMenu() {
+        performSegue(withIdentifier: "showMenu", sender: self)
     }
 }
