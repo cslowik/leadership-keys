@@ -49,6 +49,7 @@ class ContentsVC: UITableViewController {
         cell.chapterIndex.textColor = UIColor.ebonyClay
         if indexPath.row == 0 {
             cell.chapterIndex.text = "Overview"
+            cell.setSelected(true, animated: false)
         } else {
             cell.chapterIndex.text = "Key \(indexPath.row)"
         }
