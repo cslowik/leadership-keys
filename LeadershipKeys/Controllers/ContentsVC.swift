@@ -49,10 +49,12 @@ class ContentsVC: UITableViewController {
         cell.chapterIndex.textColor = UIColor.ebonyClay
         if indexPath.row == 0 {
             cell.chapterIndex.text = "Overview"
-            cell.setSelected(true, animated: false)
         } else {
             cell.chapterIndex.text = "Key \(indexPath.row)"
         }
+        
+        //TODO: set selected state
+        // if current page of article vc matches the index, set selected, otherwise set unselected
         
         return cell
     }

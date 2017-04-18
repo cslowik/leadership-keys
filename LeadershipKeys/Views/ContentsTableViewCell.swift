@@ -24,20 +24,27 @@ class ContentsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+        
+        let dotPath = UIBezierPath(ovalIn: indicatorDot.frame)
+        indicatorDot.path = dotPath.cgPath
+        
         if selected {
-            indicator.frame = CGRect(x: 8, y: chapterTitle.center.y - 3.5, width: 7, height: 7)
-            indicatorDot.frame = indicator.bounds
-            let dotPath = UIBezierPath(ovalIn: indicatorDot.frame)
-            indicatorDot.path = dotPath.cgPath
-            indicator.layer.addSublayer(indicatorDot)
-            addSubview(indicator)
+            indicatorDot.fillColor = UIColor.azureRadiance.cgColor
+        } else {
+            indicatorDot.fillColor = contentView.backgroundColor?.cgColor
         }
     }
     
     func setup() {
         backgroundColor = UIColor.clear
         selectionStyle = .none
-        indicatorDot.fillColor = UIColor.azureRadiance.cgColor
+        indicator.layer.addSublayer(indicatorDot)
+        addSubview(indicator)
+    }
+    
+    override func layoutSubviews() {
+        indicator.frame = CGRect(x: 8, y: chapterTitle.center.y - 3.5, width: 7, height: 7)
+        indicatorDot.frame = indicator.bounds
     }
 
 }
