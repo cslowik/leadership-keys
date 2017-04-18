@@ -32,9 +32,6 @@ class ContentsVC: UITableViewController {
         
     }
     
-    
-    // MARK : TableViewDataSource & Delegate Methods
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
     }
@@ -70,17 +67,7 @@ class ContentsVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        switch indexPath.row {
-        case 0:
-            // set new content view controller
-            break
-        case 1:
-            // set new content view controller
-            break
-        default:
-            break
-        }
-        
+        //TODO: go to selected page and dismiss menu
         
     }
 

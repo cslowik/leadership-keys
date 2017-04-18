@@ -1,21 +1,21 @@
 PODS:
   - AMScrollingNavbar (3.2.0)
   - MarkdownKit (1.2)
-  - Pages (1.0.0)
   - SideMenu (2.3.1)
+  - SnapKit (3.2.0)
 
 DEPENDENCIES:
   - AMScrollingNavbar
   - MarkdownKit
-  - Pages
   - SideMenu
+  - SnapKit (~> 3.0)
 
 SPEC CHECKSUMS:
   AMScrollingNavbar: cf603d4d5f11061d466a0878b9ada136248927b2
   MarkdownKit: 5ff9659d414f9a677b62667f4507766369d32129
-  Pages: f3718e6f03a5e2787f6b0bff4becb3c7c19bcebc
   SideMenu: 2a3c3da0b3d5f78a047b2271bb7398260fcd7e3d
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 0d4121ed86071359d7e684588fff4fe8696fbd2d
+PODFILE CHECKSUM: ddcf05d9d33d980f65f88343d0b5ce8defb5108e
 
 COCOAPODS: 1.2.1

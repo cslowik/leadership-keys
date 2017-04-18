@@ -53,7 +53,7 @@
                 <navigationController navigationBarHidden="YES" id="LXy-9o-6V6" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EFb-qT-HMi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFb-qT-HMi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -67,6 +67,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDL-6D-PJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="14" y="894"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Vm-us-DaQ">
+            <objects>
+                <viewController storyboardIdentifier="ch0" id="zMx-xI-Ivd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kJm-NF-eET"/>
+                        <viewControllerLayoutGuide type="bottom" id="ofD-n9-x8e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e95-pt-OyF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.62745098040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Z2-aO-B3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="1651"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="6uK-Ha-dwx">
@@ -119,37 +137,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QN-ol-IMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13.6" y="1644.8275862068967"/>
+            <point key="canvasLocation" x="-646" y="894"/>
         </scene>
         <!--ArticleVC-->
-        <scene sceneID="5R6-mX-ypl">
+        <scene sceneID="jeB-FM-cdl">
             <objects>
-                <viewController storyboardIdentifier="ArticleVC" title="ArticleVC" definesPresentationContext="YES" id="ZF7-9b-Sua" customClass="ArticleVC" customModule="LeadershipKeys" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IM7-A4-Dhq"/>
-                        <viewControllerLayoutGuide type="bottom" id="OKu-U8-GeD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6jf-zb-sS8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Overview" id="SGD-48-eXI">
-                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="6C3-yU-FkH">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Fqs-VG-osc" customClass="ArticleVC" customModule="LeadershipKeys" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CPi-ce-x5d">
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="jzk-CS-RLs">
                             <connections>
-                                <action selector="menuTapped:" destination="ZF7-9b-Sua" id="Zu8-kA-xFN"/>
-                                <segue destination="LXy-9o-6V6" kind="presentation" id="vV7-uo-sJ6"/>
+                                <segue destination="LXy-9o-6V6" kind="presentation" identifier="showMenu" id="aQW-q1-yTh"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="tocIcon" id="fJz-VC-ZDW">
+                        <barButtonItem key="rightBarButtonItem" image="tocIcon" id="GRn-zi-hKJ">
                             <connections>
-                                <action selector="contentsTapped:" destination="ZF7-9b-Sua" id="QZf-Aj-xM5"/>
-                                <segue destination="vp4-8y-PPC" kind="presentation" identifier="showContents" id="pUT-8y-6sn"/>
+                                <segue destination="vp4-8y-PPC" kind="presentation" identifier="showContents" id="cFN-uy-D6i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0PB-ai-HQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oCV-sY-pHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="793" y="894"/>
         </scene>
@@ -159,7 +166,7 @@
                 <navigationController navigationBarHidden="YES" id="vp4-8y-PPC" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Nft-vG-4YD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nft-vG-4YD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -223,20 +230,20 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDL-Zi-ngy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="1644.8275862068967"/>
+            <point key="canvasLocation" x="2265" y="894"/>
         </scene>
         <!--Scrolling Nav-->
         <scene sceneID="Heq-xW-6ar">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3W6-5A-KLF" customClass="ScrollingNav" customModule="LeadershipKeys" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Neo-Cr-I39">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Neo-Cr-I39">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ZF7-9b-Sua" kind="relationship" relationship="rootViewController" id="KDf-eI-M6m"/>
+                        <segue destination="Fqs-VG-osc" kind="relationship" relationship="rootViewController" id="wpE-mY-72y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6A-6b-5fn" userLabel="First Responder" sceneMemberID="firstResponder"/>

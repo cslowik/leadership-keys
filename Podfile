@@ -7,8 +7,8 @@ target 'LeadershipKeys' do
 
   # Pods for LeadershipKeys
   pod 'AMScrollingNavbar'
-  pod 'Pages'
   pod 'SideMenu'
   pod "MarkdownKit"
+  pod 'SnapKit', '~> 3.0'
 
 end
