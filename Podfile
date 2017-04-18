@@ -9,5 +9,6 @@ target 'LeadershipKeys' do
   pod 'AMScrollingNavbar'
   pod 'Pages'
   pod 'SideMenu'
+  pod "MarkdownKit"
 
 end

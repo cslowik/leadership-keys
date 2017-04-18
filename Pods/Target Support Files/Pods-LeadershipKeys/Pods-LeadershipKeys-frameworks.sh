@@ -90,11 +90,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AMScrollingNavbar/AMScrollingNavbar.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MarkdownKit/MarkdownKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Pages/Pages.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SideMenu/SideMenu.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AMScrollingNavbar/AMScrollingNavbar.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MarkdownKit/MarkdownKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Pages/Pages.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SideMenu/SideMenu.framework"
 fi
