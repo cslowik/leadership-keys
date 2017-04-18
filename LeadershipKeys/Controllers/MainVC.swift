@@ -16,6 +16,9 @@ class MainVC: UIViewController {
 
         let _ = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(launch), userInfo: nil, repeats: false)
         configureSideMenu()
+        
+        FileHelper.main.readChapters()
+        print(FileHelper.main.chapters)
     }
 
     func launch() {

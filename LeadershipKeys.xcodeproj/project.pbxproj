@@ -21,6 +21,8 @@
 		8399E3241EA5C2BF00F0225B /* UIColor-swatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399E3231EA5C2BF00F0225B /* UIColor-swatches.swift */; };
 		83BEEE781E9FD99600CEE4EA /* ContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEEE771E9FD99600CEE4EA /* ContentsVC.swift */; };
 		83BEEE7C1E9FD9F400CEE4EA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEEE7B1E9FD9F400CEE4EA /* MainVC.swift */; };
+		83CA2E3A1EA68D3E00EA5D95 /* Contents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83CA2E391EA68D3E00EA5D95 /* Contents.plist */; };
+		83CA2E3D1EA68E7700EA5D95 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA2E3C1EA68E7700EA5D95 /* FileHelper.swift */; };
 		83E3DDCC1E9F27130016F0B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3DDCB1E9F27130016F0B9 /* AppDelegate.swift */; };
 		83E3DDD11E9F27130016F0B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E3DDCF1E9F27130016F0B9 /* Main.storyboard */; };
 		83E3DDD31E9F27130016F0B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E3DDD21E9F27130016F0B9 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		8399E3231EA5C2BF00F0225B /* UIColor-swatches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor-swatches.swift"; path = "Extensions/UIColor-swatches.swift"; sourceTree = "<group>"; };
 		83BEEE771E9FD99600CEE4EA /* ContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentsVC.swift; path = Controllers/ContentsVC.swift; sourceTree = "<group>"; };
 		83BEEE7B1E9FD9F400CEE4EA /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainVC.swift; path = Controllers/MainVC.swift; sourceTree = "<group>"; };
+		83CA2E391EA68D3E00EA5D95 /* Contents.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Contents.plist; sourceTree = "<group>"; };
+		83CA2E3C1EA68E7700EA5D95 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileHelper.swift; path = Utility/FileHelper.swift; sourceTree = "<group>"; };
 		83E3DDC81E9F27130016F0B9 /* LeadershipKeys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeadershipKeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E3DDCB1E9F27130016F0B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83E3DDD01E9F27130016F0B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,9 +136,18 @@
 				83E3DDCB1E9F27130016F0B9 /* AppDelegate.swift */,
 				83E3DDD21E9F27130016F0B9 /* Assets.xcassets */,
 				83E3DDD41E9F27130016F0B9 /* LaunchScreen.storyboard */,
+				83CA2E391EA68D3E00EA5D95 /* Contents.plist */,
 				83E3DDD71E9F27130016F0B9 /* Info.plist */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		83CA2E3B1EA68E3E00EA5D95 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				83CA2E3C1EA68E7700EA5D95 /* FileHelper.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		83E3DDBF1E9F27130016F0B9 = {
@@ -158,6 +171,7 @@
 		83E3DDCA1E9F27130016F0B9 /* LeadershipKeys */ = {
 			isa = PBXGroup;
 			children = (
+				83CA2E3B1EA68E3E00EA5D95 /* Utility */,
 				834E4D131E9FDFF400A92EC3 /* Extensions */,
 				836768711EA5312600CEFEC3 /* Views */,
 				83BEEE791E9FD9A300CEE4EA /* Controllers */,
@@ -236,6 +250,7 @@
 				8367686A1EA51E9D00CEFEC3 /* Montserrat-Regular.ttf in Resources */,
 				8367686B1EA51E9D00CEFEC3 /* OpenSans-Regular.ttf in Resources */,
 				8367686C1EA51E9D00CEFEC3 /* OpenSans-Semibold.ttf in Resources */,
+				83CA2E3A1EA68D3E00EA5D95 /* Contents.plist in Resources */,
 				83E3DDD11E9F27130016F0B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +321,7 @@
 				83E3DDCC1E9F27130016F0B9 /* AppDelegate.swift in Sources */,
 				8366C9FB1EA008830084172E /* MenuVC.swift in Sources */,
 				836768701EA5312100CEFEC3 /* ContentsTableViewCell.swift in Sources */,
+				83CA2E3D1EA68E7700EA5D95 /* FileHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
