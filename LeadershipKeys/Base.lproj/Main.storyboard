@@ -53,7 +53,7 @@
                 <navigationController navigationBarHidden="YES" id="LXy-9o-6V6" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFb-qT-HMi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EFb-qT-HMi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -67,24 +67,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDL-6D-PJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="14" y="894"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="8Vm-us-DaQ">
-            <objects>
-                <viewController storyboardIdentifier="ch0" id="zMx-xI-Ivd" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kJm-NF-eET"/>
-                        <viewControllerLayoutGuide type="bottom" id="ofD-n9-x8e"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="e95-pt-OyF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.62745098040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Z2-aO-B3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="793" y="1651"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="6uK-Ha-dwx">
@@ -166,7 +148,7 @@
                 <navigationController navigationBarHidden="YES" id="vp4-8y-PPC" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nft-vG-4YD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Nft-vG-4YD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -237,7 +219,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3W6-5A-KLF" customClass="ScrollingNav" customModule="LeadershipKeys" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Neo-Cr-I39">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Neo-Cr-I39">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
