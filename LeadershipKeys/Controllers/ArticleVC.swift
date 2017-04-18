@@ -47,18 +47,49 @@ class ArticleVC: UIPageViewController {
         performSegue(withIdentifier: "showMenu", sender: self)
     }
     
+    
+    
 }
 
 
 // MARK: UIPageViewControllerDataSource
 
-extension ArticleVC : UIPageViewControllerDataSource {
+extension ArticleVC : UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         // next vc
-        return nil
+        guard let viewControllerIndex = chapterViewControllers.index(of: viewController as! ChapterVC) else {
+            return nil
+        }
+        
+        let nextIndex = viewControllerIndex + 1
+        let chapterViewControllersCount = chapterViewControllers.count
+        
+        guard chapterViewControllersCount != nextIndex else {
+            return nil
+        }
+        
+        guard chapterViewControllersCount > nextIndex else {
+            return nil
+        }
+        return chapterViewControllers[nextIndex]
     }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         // previous vc
-        return nil
+        guard let viewControllerIndex = chapterViewControllers.index(of: viewController as! ChapterVC) else {
+            return nil
+        }
+        
+        let previousIndex = viewControllerIndex - 1
+        
+        guard previousIndex >= 0 else {
+            return nil
+        }
+        
+        guard chapterViewControllers.count > previousIndex else {
+            return nil
+        }
+        return chapterViewControllers[previousIndex]
     }
 }
