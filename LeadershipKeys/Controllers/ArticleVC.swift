@@ -12,6 +12,11 @@ import Pages
 class ArticleVC: PagesController, ContentsDelegate {
     
     var chapterViewControllers: [ChapterVC] = []
+    var currentChapter: Int {
+        get {
+            return currentIndex
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,6 +10,7 @@ import UIKit
 
 protocol ContentsDelegate {
     func didSelectChapter(_ index: Int, sender: ContentsVC)
+    var currentChapter: Int { get }
 }
 
 class ContentsVC: UITableViewController {
@@ -45,7 +46,7 @@ class ContentsVC: UITableViewController {
         cell.chapterIndex.text = chapters[indexPath.row]["subtitle"]
         
         //TODO: set selected state
-        // if current page of article vc matches the index, set selected, otherwise set unselected
+        
         
         return cell
     }
@@ -57,13 +58,17 @@ class ContentsVC: UITableViewController {
         if (indexPath as NSIndexPath).row % 2 != 0 {
             cell.backgroundColor = UIColor.clear
         }
+        
+        guard delegate != nil else {
+            return
+        }
+        if delegate?.currentChapter == indexPath.row {
+            cell.isSelected = true
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //TODO: go to selected page and dismiss menu
         delegate?.didSelectChapter(indexPath.row, sender: self)
-        
     }
 
     

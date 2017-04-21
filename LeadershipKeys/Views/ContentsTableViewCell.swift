@@ -20,19 +20,23 @@ class ContentsTableViewCell: UITableViewCell {
         setup()
     }
     
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
-        
         let dotPath = UIBezierPath(ovalIn: indicatorDot.frame)
         indicatorDot.path = dotPath.cgPath
         
-        if selected {
-            indicatorDot.fillColor = UIColor.azureRadiance.cgColor
-        } else {
-            indicatorDot.fillColor = contentView.backgroundColor?.cgColor
-        }
+        super.setSelected(selected, animated: false)
     }
     
     func setup() {
@@ -45,6 +49,14 @@ class ContentsTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         indicator.frame = CGRect(x: 8, y: chapterTitle.center.y - 3.5, width: 7, height: 7)
         indicatorDot.frame = indicator.bounds
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        if isSelected {
+            indicatorDot.fillColor = UIColor.azureRadiance.cgColor
+        } else {
+            indicatorDot.fillColor = contentView.backgroundColor?.cgColor
+        }
+        CATransaction.commit()
     }
 
 }
