@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831BDD271EAABA2C00E8121A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */; };
 		834E4D151E9FE03400A92EC3 /* NSObject-CallSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */; };
 		8366C9FB1EA008830084172E /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FA1EA008830084172E /* MenuVC.swift */; };
 		8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FC1EA00A1C0084172E /* ArticleVC.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0096324354548C9D90A5F78F /* Pods-LeadershipKeys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadershipKeys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeadershipKeys/Pods-LeadershipKeys.debug.xcconfig"; sourceTree = "<group>"; };
+		831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewCell.swift; path = Views/MenuTableViewCell.swift; sourceTree = "<group>"; };
 		834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject-CallSelector.swift"; path = "Extensions/NSObject-CallSelector.swift"; sourceTree = "<group>"; };
 		8366C9FA1EA008830084172E /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = Controllers/MenuVC.swift; sourceTree = "<group>"; };
 		8366C9FC1EA00A1C0084172E /* ArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleVC.swift; path = Controllers/ArticleVC.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				8367686F1EA5312100CEFEC3 /* ContentsTableViewCell.swift */,
+				831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				8399E3241EA5C2BF00F0225B /* UIColor-swatches.swift in Sources */,
 				8367686E1EA51F6C00CEFEC3 /* ScrollingNav.swift in Sources */,
 				83E3DDCC1E9F27130016F0B9 /* AppDelegate.swift in Sources */,
+				831BDD271EAABA2C00E8121A /* MenuTableViewCell.swift in Sources */,
 				8366C9FB1EA008830084172E /* MenuVC.swift in Sources */,
 				836768701EA5312100CEFEC3 /* ContentsTableViewCell.swift in Sources */,
 				83CA2E3D1EA68E7700EA5D95 /* FileHelper.swift in Sources */,

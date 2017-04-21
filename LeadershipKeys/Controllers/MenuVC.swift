@@ -7,12 +7,19 @@
 //
 
 
-import Foundation
 import UIKit
+
+protocol MenuDelegate {
+    func didSelectItem(_ index: Int, sender: MenuVC)
+    var menuIndex: Int { get }
+}
 
 class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var menuItem: UILabel!
+    
+    var delegate: MenuDelegate?
     
     let titles: [String] = ["Leadership Keys", "Share via Email", "Free Tools", "About"]
     
@@ -46,37 +53,19 @@ extension MenuVC {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
         
         cell.backgroundColor = UIColor.clear
-        cell.textLabel?.font = UIFont.menuFont
-        cell.textLabel?.textColor = UIColor.ebonyClay
-        cell.textLabel?.text  = titles[indexPath.row]
+        cell.menuItem.font = UIFont.menuFont
+        cell.menuItem.textColor = UIColor.ebonyClay
+        cell.menuItem.text  = titles[indexPath.row]
         cell.selectionStyle = .none
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        switch indexPath.row {
-        case 0:
-            
-            break
-        case 1:
-            
-            break
-        case 2:
-            
-            break
-        case 3:
-            
-            break
-        default:
-            break
-        }
-        
-        
+        delegate?.didSelectItem(indexPath.row, sender: self)
     }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Pages
 
-class ArticleVC: PagesController, ContentsDelegate {
+class ArticleVC: PagesController, ContentsDelegate, MenuDelegate {
     
     var chapterViewControllers: [ChapterVC] = []
     var currentChapter: Int {
@@ -17,6 +17,7 @@ class ArticleVC: PagesController, ContentsDelegate {
             return currentIndex
         }
     }
+    var menuIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,11 @@ class ArticleVC: PagesController, ContentsDelegate {
             let toc = contentsVC.viewControllers.first as! ContentsVC
             toc.delegate = self
         }
+        if segue.identifier == "showMenu" {
+            let menuVC = segue.destination as! UINavigationController
+            let menu = menuVC.viewControllers.first as! MenuVC
+            menu.delegate = self
+        }
     }
     
     ////MARK: - ContentsDelegate
@@ -67,5 +73,12 @@ class ArticleVC: PagesController, ContentsDelegate {
         goTo(index)
         sender.dismiss(animated: true, completion: nil)
         updateView()
+    }
+    
+    ////MARK: - MenuDelegate
+    
+    func didSelectItem(_ index: Int, sender: MenuVC) {
+        print(index)
+        sender.dismiss(animated: true, completion: nil)
     }
 }

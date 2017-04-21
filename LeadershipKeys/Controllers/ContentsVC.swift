@@ -44,11 +44,6 @@ class ContentsVC: UITableViewController {
         
         cell.chapterIndex.textColor = UIColor.ebonyClay
         cell.chapterIndex.text = chapters[indexPath.row]["subtitle"]
-        if cell.isSelected {
-            cell.dot.alpha = 1
-        } else {
-            cell.dot.alpha = 0
-        }
         
         return cell
     }

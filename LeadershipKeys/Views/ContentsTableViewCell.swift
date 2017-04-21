@@ -13,7 +13,6 @@ class ContentsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var chapterTitle: UILabel!
     @IBOutlet weak var chapterIndex: UILabel!
-    @IBOutlet weak var dot: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
