@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F60a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -193,11 +194,24 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hf-E8-AZo" userLabel="indicatorView">
+                                            <rect key="frame" x="8" y="28" width="8" height="8"/>
+                                            <color key="backgroundColor" red="0.29803921570000003" green="0.60392156860000001" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="JcR-b1-bFt"/>
+                                                <constraint firstAttribute="width" constant="8" id="upK-C3-q7o"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2hf-E8-AZo" firstAttribute="leading" secondItem="FOk-I4-DHV" secondAttribute="leadingMargin" id="HFb-EH-QAb"/>
+                                        <constraint firstItem="2hf-E8-AZo" firstAttribute="centerY" secondItem="FOk-I4-DHV" secondAttribute="centerY" constant="-12" id="wZa-JS-q1T"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="chapterIndex" destination="e8m-eI-ibX" id="qIO-gk-GyL"/>
                                     <outlet property="chapterTitle" destination="gx0-jg-Lj6" id="mqz-Iu-YPp"/>
+                                    <outlet property="dot" destination="2hf-E8-AZo" id="7En-If-kms"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

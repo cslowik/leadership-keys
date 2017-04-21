@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class ContentsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var chapterTitle: UILabel!
     @IBOutlet weak var chapterIndex: UILabel!
-    let indicator = UIView()
-    let indicatorDot = CAShapeLayer()
+    @IBOutlet weak var dot: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,30 +33,25 @@ class ContentsTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         
         // Configure the view for the selected state
-        let dotPath = UIBezierPath(ovalIn: indicatorDot.frame)
-        indicatorDot.path = dotPath.cgPath
-        
+        if selected {
+            UIView.animate(withDuration: 0.18, animations: { 
+                self.backgroundColor = UIColor.azureRadiance
+                self.chapterIndex.textColor = UIColor.white
+                self.chapterTitle.textColor = UIColor.white
+            })
+        } else {
+            UIView.animate(withDuration: 0.18, animations: {
+                self.backgroundColor = UIColor.clear
+                self.chapterIndex.textColor = UIColor.ebonyClay
+                self.chapterTitle.textColor = UIColor.ebonyClay
+            })
+        }
         super.setSelected(selected, animated: false)
     }
+    
     
     func setup() {
         backgroundColor = UIColor.clear
         selectionStyle = .none
-        indicator.layer.addSublayer(indicatorDot)
-        addSubview(indicator)
     }
-    
-    override func layoutSubviews() {
-        indicator.frame = CGRect(x: 8, y: chapterTitle.center.y - 3.5, width: 7, height: 7)
-        indicatorDot.frame = indicator.bounds
-        CATransaction.begin()
-        CATransaction.setDisableActions(true)
-        if isSelected {
-            indicatorDot.fillColor = UIColor.azureRadiance.cgColor
-        } else {
-            indicatorDot.fillColor = contentView.backgroundColor?.cgColor
-        }
-        CATransaction.commit()
-    }
-
 }

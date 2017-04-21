@@ -44,9 +44,11 @@ class ContentsVC: UITableViewController {
         
         cell.chapterIndex.textColor = UIColor.ebonyClay
         cell.chapterIndex.text = chapters[indexPath.row]["subtitle"]
-        
-        //TODO: set selected state
-        
+        if cell.isSelected {
+            cell.dot.alpha = 1
+        } else {
+            cell.dot.alpha = 0
+        }
         
         return cell
     }
@@ -68,6 +70,7 @@ class ContentsVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
         delegate?.didSelectChapter(indexPath.row, sender: self)
     }
 
