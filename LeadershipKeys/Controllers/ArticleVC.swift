@@ -53,9 +53,9 @@ class ArticleVC: PagesController {
 
 // MARK: UIPageViewControllerDataSource
 
-extension ArticleVC : UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension ArticleVC {
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    override func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         // next vc
         guard let viewControllerIndex = chapterViewControllers.index(of: viewController as! ChapterVC) else {
             return nil
@@ -74,7 +74,7 @@ extension ArticleVC : UIPageViewControllerDataSource, UIPageViewControllerDelega
         return chapterViewControllers[nextIndex]
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    override func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         // previous vc
         guard let viewControllerIndex = chapterViewControllers.index(of: viewController as! ChapterVC) else {
             return nil

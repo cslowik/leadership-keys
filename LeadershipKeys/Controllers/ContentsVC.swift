@@ -10,11 +10,11 @@ import UIKit
 
 class ContentsVC: UITableViewController {
     
-    private(set) lazy var titles: [String] = {
-        var titleList = []
-        
-        return titleList
-    }()
+    var chapters: [[String:String]] {
+        get {
+            return FileHelper.main.chapters
+        }
+    }
 
     
     override func viewDidAppear(_ animated: Bool) {
@@ -23,26 +23,22 @@ class ContentsVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return chapters.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tocCell", for: indexPath) as! ContentsTableViewCell
         
-        cell.chapterTitle.text  = titles[indexPath.row]
+        cell.chapterTitle.text  = chapters[indexPath.row]["title"]
         cell.chapterTitle.textColor = UIColor.ebonyClay
         
         cell.chapterIndex.textColor = UIColor.ebonyClay
-        if indexPath.row == 0 {
-            cell.chapterIndex.text = "Overview"
-        } else {
-            cell.chapterIndex.text = "Key \(indexPath.row)"
-        }
+        cell.chapterIndex.text = chapters[indexPath.row]["subtitle"]
         
         //TODO: set selected state
         // if current page of article vc matches the index, set selected, otherwise set unselected
