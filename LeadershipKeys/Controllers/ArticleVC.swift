@@ -9,7 +9,7 @@
 import UIKit
 import Pages
 
-class ArticleVC: PagesController {
+class ArticleVC: PagesController, ContentsDelegate {
     
     var chapterViewControllers: [ChapterVC] = []
 
@@ -24,8 +24,12 @@ class ArticleVC: PagesController {
         }
         
         add(chapterViewControllers)
-        navigationItem.title = chapterViewControllers.first?.chapterSubtitle
         
+        updateView()
+    }
+    
+    func updateView() {
+        navigationItem.title = chapterViewControllers[currentIndex].chapterSubtitle
     }
     
     @IBAction func contentsTapped(_ sender: Any) {
@@ -44,4 +48,19 @@ class ArticleVC: PagesController {
         performSegue(withIdentifier: "showMenu", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showContents" {
+            let contentsVC = segue.destination as! UINavigationController
+            let toc = contentsVC.viewControllers.first as! ContentsVC
+            toc.delegate = self
+        }
+    }
+    
+    ////MARK: - ContentsDelegate
+    
+    func didSelectChapter(_ index: Int, sender: ContentsVC) {
+        goTo(index)
+        sender.dismiss(animated: true, completion: nil)
+        updateView()
+    }
 }

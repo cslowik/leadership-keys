@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ContentsDelegate {
+    func didSelectChapter(_ index: Int, sender: ContentsVC)
+}
+
 class ContentsVC: UITableViewController {
     
     var chapters: [[String:String]] {
@@ -15,7 +19,7 @@ class ContentsVC: UITableViewController {
             return FileHelper.main.chapters
         }
     }
-
+    var delegate:ContentsDelegate?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -58,6 +62,7 @@ class ContentsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //TODO: go to selected page and dismiss menu
+        delegate?.didSelectChapter(indexPath.row, sender: self)
         
     }
 
