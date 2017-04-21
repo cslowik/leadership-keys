@@ -7,21 +7,15 @@
 //
 
 import UIKit
-import AMScrollingNavbar
 
 class ContentsVC: UITableViewController {
     
-    let titles: [String] = ["Leadership Keys",
-                            "Leadership Two-Step",
-                            "Delegation",
-                            "Feedback",
-                            "Coaching for Performance",
-                            "Assumption Ladder Decision",
-                            "Assumption Ladder Applications",
-                            "Emotional Audit",
-                            "Tell, Sell, Test",
-                            "Managing Up and Partnering",
-                            "White Space Issues"]
+    private(set) lazy var titles: [String] = {
+        var titleList = []
+        
+        return titleList
+    }()
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

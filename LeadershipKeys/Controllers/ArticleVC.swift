@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Pages
 
-class ArticleVC: UIPageViewController {
+class ArticleVC: PagesController {
     
     private(set) lazy var chapterViewControllers: [ChapterVC] = {
         var chapters: [ChapterVC] = []
