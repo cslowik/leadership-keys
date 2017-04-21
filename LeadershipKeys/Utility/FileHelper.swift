@@ -6,7 +6,7 @@
 //  Copyright © 2017 Chris Slowik. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class FileHelper {
     
@@ -14,8 +14,13 @@ class FileHelper {
     
     var chapters: [[String:String]]
     
+    
     init() {
         chapters = [["title" : "Chapter One", "subtitle" : "CH 1"]]
+    }
+    
+    func load() {
+        readChapters()
     }
     
     func readChapters() {
@@ -25,6 +30,22 @@ class FileHelper {
         let newChapters = try! PropertyListSerialization.propertyList(from:data! as Data, options: [], format: nil) as! [[String:String]]
         
         chapters = newChapters
+    }
+    
+    func buildChapters() -> [ChapterVC] {
+        var chapterVCArray: [ChapterVC] = []
+        for (index, chapter) in chapters.enumerated() {
+            chapterVCArray.append(buildChapter(chapter, withIndex: index))
+        }
+        return chapterVCArray
+    }
+    
+    private func buildChapter(_ chapter: [String:String], withIndex index: Int) -> ChapterVC {
+        let newVC = ChapterVC(index: index, title: chapter["title"]!, subtitle: chapter["subtitle"]!)
+        
+        //TODO: Build ChapterVC
+        
+        return newVC
     }
     
 }
