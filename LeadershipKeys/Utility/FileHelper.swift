@@ -35,17 +35,31 @@ class FileHelper {
     func buildChapters() -> [ChapterVC] {
         var chapterVCArray: [ChapterVC] = []
         for (index, chapter) in chapters.enumerated() {
-            chapterVCArray.append(buildChapter(chapter, withIndex: index))
+            chapterVCArray.append(buildChapter(chapter, withIndex: index)!)
         }
         return chapterVCArray
     }
     
-    private func buildChapter(_ chapter: [String:String], withIndex index: Int) -> ChapterVC {
-        let newVC = ChapterVC(index: index, title: chapter["title"]!, subtitle: chapter["subtitle"]!)
+    private func buildChapter(_ chapter: [String:String], withIndex index: Int) -> ChapterVC? {
         
-        //TODO: Build ChapterVC
+        if let path = Bundle.main.path(forResource: "ch\(index)", ofType: "md") {
+            do {
+                let text = try String(contentsOfFile: path)
+                let newVC = ChapterVC(index: index, title: chapter["title"]!, subtitle: chapter["subtitle"]!, text: text)
+                
+                return newVC
+            }
+            catch {
+                print("text not found")
+                return nil
+            }
+        } else {
+            print("file not found")
+            return nil
+        }
+            
         
-        return newVC
+        
     }
     
 }

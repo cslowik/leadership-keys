@@ -84,6 +84,7 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
   var scrollableView: UIView?
   var lastContentOffset = CGFloat(0.0)
   var scrollSpeedFactor: CGFloat = 1
+  var previousState: NavigationBarState = .expanded // Used to mark the state before the app goes in background
 
   /**
    Start scrolling
@@ -103,6 +104,7 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
     gestureRecognizer?.delegate = self
     scrollableView.addGestureRecognizer(gestureRecognizer!)
 
+    NotificationCenter.default.addObserver(self, selector: #selector(ScrollingNavigationController.willResignActive(_:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(ScrollingNavigationController.didBecomeActive(_:)), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(ScrollingNavigationController.didRotate(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
 
@@ -171,9 +173,13 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
 
   /**
    Stop observing the view and reset the navigation bar
+   
+   - parameter showingNavbar: If true the navbar is show, otherwise it remains in its current state. Defaults to `true`
    */
-  public func stopFollowingScrollView() {
-    showNavbar(animated: false)
+  public func stopFollowingScrollView(showingNavbar: Bool = true) {
+  if showingNavbar {
+      showNavbar(animated: false)
+    }
     if let gesture = gestureRecognizer {
       scrollableView?.removeGestureRecognizer(gesture)
     }
@@ -228,7 +234,15 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
   func didBecomeActive(_ notification: Notification) {
     if expandOnActive {
       showNavbar(animated: false)
+    } else {
+      if previousState == .collapsed {
+        hideNavbar(animated: false)
+      }
     }
+  }
+
+  func willResignActive(_ notification: Notification) {
+    previousState = state
   }
 
   /// Handles when the status bar changes
@@ -336,17 +350,6 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
       frame.origin = CGPoint(x: frame.origin.x, y: navBarY)
       frame.size = CGSize(width: frame.size.width, height: view.frame.size.height - (navBarY) - tabBarOffset)
       topViewController.view.frame = frame
-    } else {
-      adjustContentInsets()
-    }
-  }
-
-  private func adjustContentInsets() {
-    if let view = scrollView() as? UICollectionView {
-      view.contentInset.top = navigationBar.frame.origin.y + navigationBar.frame.size.height
-      // When this is called by `hideNavbar(_:)` or `showNavbar(_:)`, the sticky header reamins still
-      // even if the content inset changed. This triggers a fake scroll, fixing the header's position
-      view.setContentOffset(CGPoint(x: contentOffset.x, y: contentOffset.y - 0.1), animated: false)
     }
   }
 
