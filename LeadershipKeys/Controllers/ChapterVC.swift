@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Down
 
 class ChapterVC: UIViewController {
     
@@ -14,9 +15,15 @@ class ChapterVC: UIViewController {
     var chapterTitle: String
     var chapterSubtitle: String
     var chapterText: String
+    var renderedChapter: DownView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if renderedChapter == nil {
+            renderedChapter = try? DownView(frame: self.view.bounds, markdownString: chapterText) {
+                self.view.addSubview(self.renderedChapter!)
+            }
+        }
     }
     
     init(index: Int, title: String, subtitle: String, text: String) {
