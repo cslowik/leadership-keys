@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AMScrollingNavbar
 
 class ChapterVC: UIViewController {
     var chapterIndex: Int
@@ -35,5 +34,15 @@ class ChapterVC: UIViewController {
     
     override func loadView() {
         view = ChapterView(frame: UIScreen.main.bounds, chapter: chapterIndex)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        var contentRect = CGRect.zero
+        for contentView in view.subviews {
+            contentRect = contentRect.union(contentView.frame)
+        }
+        chapterView.contentSize = contentRect.size
+        
+        print(chapterView.contentSize)
     }
 }

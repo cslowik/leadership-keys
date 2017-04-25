@@ -18,6 +18,8 @@ class ChapterView: UIScrollView {
     init(frame: CGRect, chapter: Int) {
         super.init(frame: frame)
         layoutChapter(chapter)
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -97,17 +99,19 @@ class ChapterView: UIScrollView {
             let q1View = UIView()
             addSubview(q1View)
             q1View.backgroundColor = UIColor.athensGray
-            q1View.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview()
-                make.right.equalToSuperview()
-                make.top.equalTo(t2View.snp.bottom).offset(edgeMargin)
-                make.height.equalTo(100)
-            })
+            
             q1View.addSubview(q1Text)
             q1Text.snp.makeConstraints({ (make) in
                 make.left.equalToSuperview().inset(edgeMargin)
                 make.right.equalToSuperview().inset(edgeMargin)
                 make.top.equalToSuperview().inset(edgeMargin)
+            })
+            
+            q1View.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+                make.top.equalTo(t2View.snp.bottom).offset(edgeMargin)
+                make.bottom.equalTo(q1Text.snp.bottom).offset(edgeMargin)
             })
             
             break
