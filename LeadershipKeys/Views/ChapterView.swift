@@ -62,122 +62,23 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let p1 = "Leadership has a rhythm and beat to it. You have to know the right time to step in and when to step out. Star leaders feel the beat and make the appropriate steps. They don’t take their direct reports problems or \"monkeys\", but help them deal with their \"monkeys\" with support and resources. Rank yourself on each of the steps, on a 1-10. Practice the steps which will help you the most to become good at all the steps."
-                .styleAll(bodyStyle.paragraphStyle(paragraph))
-                .attributedString
-            let p1View = UITextView()
-            p1View.attributedText = p1
-            p1View.configure()
-            addSubview(p1View)
-            p1View.snp.makeConstraints { (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(titleLabel.snp.bottom).offset(edgeMargin)
-            }
+            let p1 = addParagraph(after: titleLabel, withText: "Leadership has a rhythm and beat to it. You have to know the right time to step in and when to step out. Star leaders feel the beat and make the appropriate steps. They don’t take their direct reports problems or \"monkeys\", but help them deal with their \"monkeys\" with support and resources. Rank yourself on each of the steps, on a 1-10. Practice the steps which will help you the most to become good at all the steps.")
 
-            let t2 = "1. Step In"
-                .styleAll(subtitleStyle)
-                .attributedString
-            let t2View = UITextView()
-            t2View.attributedText = t2
-            t2View.configure()
-            addSubview(t2View)
-            t2View.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(p1View.snp.bottom).offset(edgeMargin * 2)
-            })
+            let t2 = addHeading(after: p1, level: 2, withText: "1. Step In")
             
-            let p2 = "Set the vision, systems and structure, clarify expectations, identify the deliverables and timetable, establish resources available, encourage and motivate."
-                .styleAll(bodyStyle.paragraphStyle(paragraph))
-                .attributedString
-            let p2View = UITextView()
-            p2View.attributedText = p2
-            p2View.configure()
-            addSubview(p2View)
-            p2View.snp.makeConstraints { (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(t2View.snp.bottom).offset(edgeMargin)
-            }
+            let p2 = addParagraph(after: t2, withText: "Set the vision, systems and structure, clarify expectations, identify the deliverables and timetable, establish resources available, encourage and motivate.")
             
-            let t3 = "Step In - If it’s going well"
-                .styleAll(h3)
-                .attributedString
-            let t3View = UITextView()
-            t3View.attributedText = t3
-            t3View.configure()
-            addSubview(t3View)
-            t3View.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(p2View.snp.bottom).offset(edgeMargin)
-            })
+            let t3 = addHeading(after: p2, level: 3, withText: "Step In - If it’s going well")
             
-            let p3 = "Support and acknowledge, spread the news, codify what is working well to replicate. Hold the accountability. Monitor, evaluate and adjust. Reiterate the vision and deliverables."
-                .styleAll(bodyStyle.paragraphStyle(paragraph))
-                .attributedString
-            let p3View = UITextView()
-            p3View.attributedText = p3
-            p3View.configure()
-            addSubview(p3View)
-            p3View.snp.makeConstraints { (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(t3View.snp.bottom)
-            }
+            let p3 = addParagraph(after: t3, withText: "Support and acknowledge, spread the news, codify what is working well to replicate. Hold the accountability. Monitor, evaluate and adjust. Reiterate the vision and deliverables.")
             
-            let t4 = "Step In - If it’s not going well"
-                .styleAll(h3)
-                .attributedString
-            let t4View = UITextView()
-            t4View.attributedText = t4
-            t4View.configure()
-            addSubview(t4View)
-            t4View.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(p3View.snp.bottom).offset(edgeMargin)
-            })
+            let t4 = addHeading(after: p3, level: 3, withText: "Step In - If it’s not going well")
             
-            let p4 = "\"Right the ship\". Understand what is the issue and what they have tried. Make a decision quickly after you have checked in with them. Reiterate the vision and deliverables. Clarify expectations and resources."
-                .styleAll(bodyStyle.paragraphStyle(paragraph))
-                .attributedString
-            let p4View = UITextView()
-            p4View.attributedText = p4
-            p4View.configure()
-            addSubview(p4View)
-            p4View.snp.makeConstraints { (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(t4View.snp.bottom)
-            }
+            let p4 = addParagraph(after: t4, withText: "\"Right the ship\". Understand what is the issue and what they have tried. Make a decision quickly after you have checked in with them. Reiterate the vision and deliverables. Clarify expectations and resources.")
         
-            let t5 = "2. Step Out"
-                .styleAll(subtitleStyle)
-                .attributedString
-            let t5View = UITextView()
-            t5View.attributedText = t5
-            t5View.configure()
-            addSubview(t5View)
-            t5View.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(p4View.snp.bottom).offset(edgeMargin * 2)
-            })
+            let t5 = addHeading(after: p4, level: 2, withText: "2. Step Out")
             
-            let p5 = "Leave alone and let them come to you if they have questions, Empower and encourage them to use their own best judgment. Redirect to others. Manage resources. Fight the urge to step in and take over. Recognize and support. Don't take their problems or \"monkeys.\""
-                .styleAll(bodyStyle.paragraphStyle(paragraph))
-                .attributedString
-            let p5View = UITextView()
-            p5View.attributedText = p5
-            p5View.configure()
-            addSubview(p5View)
-            p5View.snp.makeConstraints { (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(t5View.snp.bottom).offset(edgeMargin)
-            }
+            let p5 = addParagraph(after: t5, withText: "Leave alone and let them come to you if they have questions, Empower and encourage them to use their own best judgment. Redirect to others. Manage resources. Fight the urge to step in and take over. Recognize and support. Don't take their problems or \"monkeys.\"")
             
             let t6 = "Repeat steps as needed"
                 .styleAll(h3)
@@ -188,23 +89,15 @@ class ChapterView: UIScrollView {
             addSubview(t6View)
             t6View.snp.makeConstraints({ (make) in
                 make.centerX.equalToSuperview()
-                make.top.equalTo(p5View.snp.bottom)
+                make.top.equalTo(p5.snp.bottom)
             })
             
             let hr1 = addHorizontalRule(after: t6View)
             
-            let t7 = "Leadership Keys"
-                .styleAll(subtitleStyle)
-                .attributedString
-            let t7View = UITextView()
-            t7View.attributedText = t7
-            t7View.configure()
-            addSubview(t7View)
-            t7View.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalTo(hr1.snp.bottom).offset(edgeMargin)
-            })
+            let t7 = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            
+            let q1 = addQuote(after: t7, withText: "\"Leaders have 50-70% influence over the climate of their team.\" <i>Hay Group in Nadler, 2011</i>")
+            _ = addQuote(after: q1, withText: "\"77% of companies say they don’t have enough successors to their current senior managers.\" <i>Right Management Consultants (2006)</i>")
             
             break
         case 2:
@@ -327,7 +220,7 @@ class ChapterView: UIScrollView {
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
             make.centerX.equalToSuperview()
-            make.top.equalTo(after.snp.bottom).offset(edgeMargin)
+            make.top.equalTo(after.snp.bottom)
         }
         return pView
     }
