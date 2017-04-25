@@ -39,58 +39,77 @@ class ChapterView: UIScrollView {
             //MARK:- Chapter 0
             let title = "Emotional Intelligence Tools to go from Good to Great Leadership"
             titleLabel.text = title
-            addSubview(titleLabel)
-            makeTitleConstraints(titleLabel)
+            addTitle(titleLabel)
             
             break
         case 1:
             //MARK:- Chapter 1
             let title = "Leadership Two-Step"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 2:
             //MARK:- Chapter 2
             let title = "Delegation"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 3:
             //MARK:- Chapter 3
             let title = "Giving Feedback"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 4:
             //MARK:- Chapter 4
             let title = "Coaching for Performance"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 5:
             //MARK:- Chapter 5
             let title = "Assumption Ladder"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 6:
             //MARK:- Chapter 6
             let title = "Assumption Ladder Applications"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 7:
             //MARK:- Chapter 7
             let title = "Emotional Audit"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 8:
             //MARK:- Chapter 8
             let title = "Tell, Sell, Test"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 9:
             //MARK:- Chapter 9
             let title = "Managing Up & Partnering"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         case 10:
             //MARK:- Chapter 10
             let title = "White Space Issues"
+            titleLabel.text = title
+            addTitle(titleLabel)
             
             break
         default:
@@ -98,7 +117,8 @@ class ChapterView: UIScrollView {
         }
     }
     
-    func makeTitleConstraints(_ titleLabel: UITextView) {
+    func addTitle(_ titleLabel: UITextView) {
+        addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)

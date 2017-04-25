@@ -25,6 +25,7 @@ class ArticleVC: PagesController, ContentsDelegate, MenuDelegate {
         view.backgroundColor = UIColor.white
         dataSource = self
         showPageControl = false
+        automaticallyAdjustsScrollViewInsets = false
         //enableSwipe = false
         
         if chapterViewControllers == [] {
