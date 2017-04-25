@@ -18,6 +18,10 @@ extension UIFont {
         return UIFont(name: "OpenSans-Semibold", size: ofSize) ?? UIFont.boldSystemFont(ofSize:ofSize)
     }
     
+    class func italicFont(ofSize: CGFloat) -> UIFont {
+        return UIFont(name: "OpenSans-Italic", size: ofSize) ?? UIFont.italicSystemFont(ofSize:ofSize)
+    }
+    
     class func headerFont(ofSize: CGFloat) -> UIFont {
         return UIFont(name: "Montserrat-Regular", size: ofSize) ?? UIFont.systemFont(ofSize:ofSize)
     }
@@ -43,6 +47,7 @@ extension UIFont {
         static let subtitleFont: UIFont = UIFont.headerFont(ofSize: 18)
         static let bodyFont: UIFont = UIFont.baseFont(ofSize: 18)
         static let boldBodyFont: UIFont = UIFont.boldFont(ofSize: 18)
+        static let italicBodyFont: UIFont = UIFont.italicFont(ofSize: 18)
     }
     
     //// Fonts
@@ -59,4 +64,5 @@ extension UIFont {
     public class var subtitleFont: UIFont { return Cache.subtitleFont }
     public class var bodyFont: UIFont { return Cache.bodyFont }
     public class var boldBodyFont: UIFont { return Cache.boldBodyFont }
+    public class var italicBodyFont: UIFont { return Cache.italicBodyFont }
 }
