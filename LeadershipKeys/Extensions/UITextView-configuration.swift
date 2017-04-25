@@ -13,5 +13,6 @@ extension UITextView {
         isEditable = false
         isSelectable = false
         isScrollEnabled = false
+        backgroundColor = UIColor.clear
     }
 }

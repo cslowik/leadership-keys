@@ -37,9 +37,10 @@ class ChapterView: UIScrollView {
         switch chapter {
         case 0:
             //MARK:- Chapter 0
-            let title = "Emotional Intelligence Tools to go from Good to Great Leadership"
-            titleLabel.text = title
+            let t1 = "Emotional Intelligence Tools to go from Good to Great Leadership"
+            titleLabel.text = t1
             addTitle(titleLabel)
+            
             let p1 = "As leaders move up in an organization up to 90% of their success factors are in Emotional Intelligence (EI) versus Intelligence and Technical expertise. <i>(Goleman, 2006)</i> Going from good to great takes doing  5-6 competencies really well. <i>(Zenger and Folkman, 2009)</i>"
                 .style(tags: i)
                 .styleAll(bodyStyle.paragraphStyle(paragraph))
@@ -54,6 +55,60 @@ class ChapterView: UIScrollView {
                 make.centerX.equalToSuperview()
                 make.top.equalTo(titleLabel.snp.bottom).offset(edgeMargin)
             }
+            
+            let p2 = "Below are tools that will assist you in becoming a Star Performer. Use these tools to prepare, practice, inform and perform."
+                .styleAll(bodyStyle.paragraphStyle(paragraph))
+                .attributedString
+            let p2View = UITextView()
+            p2View.attributedText = p2
+            p2View.configure()
+            addSubview(p2View)
+            p2View.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.centerX.equalToSuperview()
+                make.top.equalTo(p1View.snp.bottom).offset(edgeMargin)
+            })
+            
+            //TODO: Add table
+            
+            let t2 = "Leadership Keys"
+                .styleAll(subtitleStyle)
+                .attributedString
+            let t2View = UITextView()
+            t2View.attributedText = t2
+            t2View.configure()
+            addSubview(t2View)
+            t2View.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.centerX.equalToSuperview()
+                make.top.equalTo(p2View.snp.bottom).offset(edgeMargin * 2)
+            })
+            
+            let q1 = "\"Every leader I have worked with has underestimated their influence on others and consequently underperformed. How do you remedy this? Take <b>micro-initiatives</b> daily and create <b>macro-impacts</b>.\" <i>Relly Nadler, Psy.D. - 2006-2011</i>"
+                .style(tags: [b, i])
+                .styleAll(quoteStyle)
+                .attributedString
+            
+            let q1Text = UITextView()
+            q1Text.attributedText = q1
+            q1Text.configure()
+            let q1View = UIView()
+            addSubview(q1View)
+            q1View.backgroundColor = UIColor.athensGray
+            q1View.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+                make.top.equalTo(t2View.snp.bottom).offset(edgeMargin)
+                make.height.equalTo(100)
+            })
+            q1View.addSubview(q1Text)
+            q1Text.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalToSuperview().inset(edgeMargin)
+            })
             
             break
         case 1:
@@ -129,6 +184,7 @@ class ChapterView: UIScrollView {
         default:
             break
         }
+        
     }
     
     func addTitle(_ titleLabel: UITextView) {

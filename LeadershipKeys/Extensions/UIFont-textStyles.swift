@@ -44,7 +44,7 @@ extension UIFont {
         
         // Article Fonts
         static let titleFont: UIFont = UIFont.boldHeaderFont(ofSize: 30)
-        static let subtitleFont: UIFont = UIFont.headerFont(ofSize: 18)
+        static let subtitleFont: UIFont = UIFont.headerFont(ofSize: 24)
         static let bodyFont: UIFont = UIFont.baseFont(ofSize: 18)
         static let boldBodyFont: UIFont = UIFont.boldFont(ofSize: 18)
         static let italicBodyFont: UIFont = UIFont.italicFont(ofSize: 18)
