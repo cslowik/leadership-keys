@@ -24,6 +24,8 @@ class ArticleVC: PagesController, ContentsDelegate, MenuDelegate {
         
         view.backgroundColor = UIColor.white
         dataSource = self
+        showPageControl = false
+        //enableSwipe = false
         
         if chapterViewControllers == [] {
             chapterViewControllers = FileHelper.main.buildChapters()
@@ -65,6 +67,12 @@ class ArticleVC: PagesController, ContentsDelegate, MenuDelegate {
             let menu = menuVC.viewControllers.first as! MenuVC
             menu.delegate = self
         }
+    }
+    
+    override func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        super.pageViewController(pageViewController, didFinishAnimating: finished, previousViewControllers: previousViewControllers, transitionCompleted: completed)
+        updateView()
     }
     
     ////MARK: - ContentsDelegate

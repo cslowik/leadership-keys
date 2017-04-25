@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import AMScrollingNavbar
+//import AMScrollingNavbar
 
-class ScrollingNav: ScrollingNavigationController {
+class ScrollingNav: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,7 @@ class ScrollingNav: ScrollingNavigationController {
         navigationBar.tintColor = UIColor.loblolly
         navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.navFont,
                                              NSForegroundColorAttributeName: UIColor.ebonyClay]
+        
     }
 
 }

@@ -7,23 +7,17 @@
 //
 
 import UIKit
-import Down
+import AMScrollingNavbar
 
 class ChapterVC: UIViewController {
-    
     var chapterIndex: Int
     var chapterTitle: String
     var chapterSubtitle: String
     var chapterText: String
-    var renderedChapter: DownView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if renderedChapter == nil {
-            renderedChapter = try? DownView(frame: self.view.bounds, markdownString: chapterText) {
-                self.view.addSubview(self.renderedChapter!)
-            }
-        }
+        
     }
     
     init(index: Int, title: String, subtitle: String, text: String) {

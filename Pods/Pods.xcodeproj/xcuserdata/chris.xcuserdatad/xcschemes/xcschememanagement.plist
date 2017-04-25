@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Down.xcscheme</key>
+		<key>Atributika.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,22 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2903E0BA291E786CF6F82D4C96F2A339</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>43134A787828ADAA327E8EB54C1E5F6B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4E050B62537A7E4FC038E95A002BF635</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75880FDD0C26E184497D6C56A7F9360A</key>
+		<key>5963994107D6F6ACCA698F0F8446BAD4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>643A26222DD5E729C4322C1692542233</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA70EA23A25EF4F8B9EB9354C42EF145</key>
+		<key>9B9B940095B96FBC22B4C506B5E604D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EFD0510E28D7787334964508C4A40435</key>
 		<dict>
 			<key>primary</key>
 			<true/>
