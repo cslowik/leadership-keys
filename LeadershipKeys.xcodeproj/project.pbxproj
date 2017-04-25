@@ -37,6 +37,7 @@
 		0096324354548C9D90A5F78F /* Pods-LeadershipKeys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadershipKeys.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeadershipKeys/Pods-LeadershipKeys.debug.xcconfig"; sourceTree = "<group>"; };
 		831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewCell.swift; path = Views/MenuTableViewCell.swift; sourceTree = "<group>"; };
 		833CB8B51EAF8F5E008CC182 /* TextStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextStyles.swift; path = Utility/TextStyles.swift; sourceTree = "<group>"; };
+		833CB8B71EAF92C5008CC182 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject-CallSelector.swift"; path = "Extensions/NSObject-CallSelector.swift"; sourceTree = "<group>"; };
 		8366C9FA1EA008830084172E /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = Controllers/MenuVC.swift; sourceTree = "<group>"; };
 		8366C9FC1EA00A1C0084172E /* ArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleVC.swift; path = Controllers/ArticleVC.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 			children = (
 				836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */,
 				836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */,
+				833CB8B71EAF92C5008CC182 /* OpenSans-Italic.ttf */,
 				836768671EA51E9D00CEFEC3 /* OpenSans-Regular.ttf */,
 				836768681EA51E9D00CEFEC3 /* OpenSans-Semibold.ttf */,
 			);
