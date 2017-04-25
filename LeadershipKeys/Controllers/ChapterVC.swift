@@ -13,18 +13,16 @@ class ChapterVC: UIViewController {
     var chapterIndex: Int
     var chapterTitle: String
     var chapterSubtitle: String
-    var chapterText: String
+    var chapterView: ChapterView! { return self.view as! ChapterView }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    init(index: Int, title: String, subtitle: String, text: String) {
+    init(index: Int, title: String, subtitle: String) {
         chapterIndex = index
         chapterTitle = title
         chapterSubtitle = subtitle
-        chapterText = text
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,8 +30,10 @@ class ChapterVC: UIViewController {
         chapterIndex = 0
         chapterTitle = "No chapter"
         chapterSubtitle = ""
-        chapterText = ""
         super.init(coder: aDecoder)
     }
     
+    override func loadView() {
+        view = ChapterView(frame: UIScreen.main.bounds, chapter: chapterIndex)
+    }
 }
