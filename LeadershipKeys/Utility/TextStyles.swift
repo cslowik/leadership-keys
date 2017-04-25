@@ -11,3 +11,4 @@ import Atributika
 
 let b = Style("b").font(.boldBodyFont)
 let i = Style("i").font(.italicBodyFont)
+let bodyStyle = Style.font(UIFont.bodyFont).foregroundColor(UIColor.slateGray)

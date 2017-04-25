@@ -33,5 +33,51 @@
             endingLineNumber = "42">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LeadershipKeys/Utility/TextStyles.swift"
+            timestampString = "514831898.967855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_E0CE1B2FE1D3BC93E4CC988772F6903D_func2"
+                  moduleName = "LeadershipKeys"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chris/Development/leadership-keys/LeadershipKeys/Utility/TextStyles.swift"
+                  timestampString = "514832017.890503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LeadershipKeys.bodyStyle.unsafeMutableAddressor : Atributika.Style"
+                  moduleName = "LeadershipKeys"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chris/Development/leadership-keys/LeadershipKeys/Utility/TextStyles.swift"
+                  timestampString = "514832017.893175"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -8,9 +8,11 @@
 
 import UIKit
 import SnapKit
+import Atributika
 
 class ChapterView: UIScrollView {
     
+    let paragraph = NSMutableParagraphStyle()
     let edgeMargin: CGFloat = UIScreen.main.bounds.width * 0.024
 
     init(frame: CGRect, chapter: Int) {
@@ -24,15 +26,13 @@ class ChapterView: UIScrollView {
 
     //MARK:- Chapter Layouts
     func layoutChapter(_ chapter: Int) {
+        paragraph.lineSpacing = 1.45
         
         // Make title
         let titleLabel = UITextView()
         titleLabel.font = UIFont.titleFont
         titleLabel.textColor = UIColor.ebonyClay
-        titleLabel.isEditable = false
-        titleLabel.isSelectable = false
-        titleLabel.isScrollEnabled = false
-        titleLabel.backgroundColor = UIColor.azureRadiance
+        titleLabel.configure()
         
         switch chapter {
         case 0:
@@ -40,6 +40,20 @@ class ChapterView: UIScrollView {
             let title = "Emotional Intelligence Tools to go from Good to Great Leadership"
             titleLabel.text = title
             addTitle(titleLabel)
+            let p1 = "As leaders move up in an organization up to 90% of their success factors are in Emotional Intelligence (EI) versus Intelligence and Technical expertise. <i>(Goleman, 2006)</i> Going from good to great takes doing  5-6 competencies really well. <i>(Zenger and Folkman, 2009)</i>"
+                .style(tags: i)
+                .styleAll(bodyStyle.paragraphStyle(paragraph))
+                .attributedString
+            let p1View = UITextView()
+            p1View.attributedText = p1
+            p1View.configure()
+            addSubview(p1View)
+            p1View.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.centerX.equalToSuperview()
+                make.top.equalTo(titleLabel.snp.bottom).offset(edgeMargin)
+            }
             
             break
         case 1:

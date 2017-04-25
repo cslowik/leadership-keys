@@ -11,7 +11,7 @@ import UIKit
 extension UIFont {
     
     class func baseFont(ofSize: CGFloat) -> UIFont {
-        return UIFont(name: "OpenSans-Regular", size: ofSize) ?? UIFont.systemFont(ofSize:ofSize)
+        return UIFont(name: "OpenSans", size: ofSize) ?? UIFont.systemFont(ofSize:ofSize)
     }
     
     class func boldFont(ofSize: CGFloat) -> UIFont {
