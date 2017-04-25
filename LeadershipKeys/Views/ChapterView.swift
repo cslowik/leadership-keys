@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 
 class ChapterView: UIScrollView {
+    
+    let edgeMargin: CGFloat = UIScreen.main.bounds.width * 0.024
 
     init(frame: CGRect, chapter: Int) {
         super.init(frame: frame)
@@ -22,10 +24,15 @@ class ChapterView: UIScrollView {
 
     //MARK:- Chapter Layouts
     func layoutChapter(_ chapter: Int) {
+        
         // Make title
-        let titleLabel = UILabel()
+        let titleLabel = UITextView()
         titleLabel.font = UIFont.titleFont
         titleLabel.textColor = UIColor.ebonyClay
+        titleLabel.isEditable = false
+        titleLabel.isSelectable = false
+        titleLabel.isScrollEnabled = false
+        titleLabel.backgroundColor = UIColor.azureRadiance
         
         switch chapter {
         case 0:
@@ -91,10 +98,11 @@ class ChapterView: UIScrollView {
         }
     }
     
-    func makeTitleConstraints(_ titleLabel: UILabel) {
-        titleLabel.snp.makeConstraints({ (make) in
-            make.left.equalToSuperview().inset(24)
-            make.right.equalToSuperview().inset(24)
-        })
+    func makeTitleConstraints(_ titleLabel: UITextView) {
+        titleLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().inset(edgeMargin)
+            make.right.equalToSuperview().inset(edgeMargin)
+            make.centerX.equalToSuperview()
+        }
     }
 }

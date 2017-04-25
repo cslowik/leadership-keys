@@ -27,7 +27,7 @@ extension UIFont {
     }
     
     class func boldHeaderFont(ofSize: CGFloat) -> UIFont {
-        return UIFont(name: "Montserrat-Semibold", size: ofSize) ?? UIFont.boldSystemFont(ofSize:ofSize)
+        return UIFont(name: "Montserrat-Bold", size: ofSize) ?? UIFont.boldSystemFont(ofSize:ofSize)
     }
     
     //// Cache
@@ -43,7 +43,7 @@ extension UIFont {
         static let inputFont: UIFont = UIFont.baseFont(ofSize: 18)
         
         // Article Fonts
-        static let titleFont: UIFont = UIFont.boldHeaderFont(ofSize: 32)
+        static let titleFont: UIFont = UIFont.boldHeaderFont(ofSize: 30)
         static let subtitleFont: UIFont = UIFont.headerFont(ofSize: 18)
         static let bodyFont: UIFont = UIFont.baseFont(ofSize: 18)
         static let boldBodyFont: UIFont = UIFont.boldFont(ofSize: 18)

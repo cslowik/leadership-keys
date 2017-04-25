@@ -94,14 +94,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8310E2F21EAC100F00A13A65 /* Chapters */ = {
-			isa = PBXGroup;
-			children = (
-				839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */,
-			);
-			name = Chapters;
-			sourceTree = "<group>";
-		};
 		834E4D131E9FDFF400A92EC3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +119,7 @@
 		836768711EA5312600CEFEC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8310E2F21EAC100F00A13A65 /* Chapters */,
+				839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */,
 				8367686F1EA5312100CEFEC3 /* ContentsTableViewCell.swift */,
 				831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */,
 			);

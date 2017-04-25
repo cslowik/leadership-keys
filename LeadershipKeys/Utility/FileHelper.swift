@@ -14,7 +14,6 @@ class FileHelper {
     
     var chapters: [[String:String]]
     
-    
     init() {
         chapters = [["title" : "Chapter One", "subtitle" : "CH 1"]]
     }
