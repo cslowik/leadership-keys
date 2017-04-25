@@ -45,6 +45,7 @@ extension UIFont {
         // Article Fonts
         static let titleFont: UIFont = UIFont.boldHeaderFont(ofSize: 30)
         static let subtitleFont: UIFont = UIFont.headerFont(ofSize: 24)
+        static let smallHeading: UIFont = UIFont.headerFont(ofSize: 21)
         static let bodyFont: UIFont = UIFont.baseFont(ofSize: 18)
         static let boldBodyFont: UIFont = UIFont.boldFont(ofSize: 18)
         static let italicBodyFont: UIFont = UIFont.italicFont(ofSize: 18)
@@ -62,6 +63,7 @@ extension UIFont {
     
     public class var titleFont: UIFont { return Cache.titleFont }
     public class var subtitleFont: UIFont { return Cache.subtitleFont }
+    public class var smallHeading: UIFont { return Cache.smallHeading }
     public class var bodyFont: UIFont { return Cache.bodyFont }
     public class var boldBodyFont: UIFont { return Cache.boldBodyFont }
     public class var italicBodyFont: UIFont { return Cache.italicBodyFont }

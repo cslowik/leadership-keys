@@ -12,5 +12,7 @@ import Atributika
 let b = Style("b").font(.boldBodyFont)
 let i = Style("i").font(.italicBodyFont)
 let bodyStyle = Style.font(UIFont.bodyFont).foregroundColor(UIColor.slateGray)
+let titleStyle = Style.font(UIFont.titleFont).foregroundColor(UIColor.ebonyClay)
+let h3 = Style.font(UIFont.smallHeading).foregroundColor(UIColor.ebonyClay)
 let subtitleStyle = Style.font(UIFont.subtitleFont).foregroundColor(UIColor.ebonyClay)
 let quoteStyle = Style.font(UIFont.baseFont(ofSize: 16)).foregroundColor(UIColor.ebonyClay)

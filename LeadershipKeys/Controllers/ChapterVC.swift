@@ -42,7 +42,5 @@ class ChapterVC: UIViewController {
             contentRect = contentRect.union(contentView.frame)
         }
         chapterView.contentSize = contentRect.size
-        
-        print(chapterView.contentSize)
     }
 }

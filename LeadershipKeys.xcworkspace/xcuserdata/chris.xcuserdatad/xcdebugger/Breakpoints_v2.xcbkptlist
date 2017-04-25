@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeadershipKeys/Controllers/ChapterVC.swift"
-            timestampString = "514835416.147216"
+            timestampString = "514848715.126591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51">
+            startingLineNumber = "49"
+            endingLineNumber = "49">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeadershipKeys/Utility/TextStyles.swift"
-            timestampString = "514832900.782822"
+            timestampString = "514852255.368317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14">
+            startingLineNumber = "15"
+            endingLineNumber = "15">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

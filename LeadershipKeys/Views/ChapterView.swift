@@ -43,8 +43,26 @@ class ChapterView: UIScrollView {
             titleLabel.text = t1
             addTitle(titleLabel)
             
-            let p1 = "As leaders move up in an organization up to 90% of their success factors are in Emotional Intelligence (EI) versus Intelligence and Technical expertise. <i>(Goleman, 2006)</i> Going from good to great takes doing  5-6 competencies really well. <i>(Zenger and Folkman, 2009)</i>"
-                .style(tags: i)
+            let p1 = addParagraph(after: titleLabel, withText: "As leaders move up in an organization up to 90% of their success factors are in Emotional Intelligence (EI) versus Intelligence and Technical expertise. <i>(Goleman, 2006)</i> Going from good to great takes doing  5-6 competencies really well. <i>(Zenger and Folkman, 2009)</i>")
+            
+            let p2 = addParagraph(after: p1, withText: "Below are tools that will assist you in becoming a Star Performer. Use these tools to prepare, practice, inform and perform.")
+            
+            //TODO: Add table
+            
+            let hr1 = addHorizontalRule(after: p2)
+            
+            let t2 = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            
+            _ = addQuote(after: t2, withText: "\"Every leader I have worked with has underestimated their influence on others and consequently underperformed. How do you remedy this? Take <b>micro-initiatives</b> daily and create <b>macro-impacts</b>.\" <i>Relly Nadler, Psy.D. - 2006-2011</i>")
+            
+            break
+        case 1:
+            //MARK:- Chapter 1
+            let title = "Leadership Two-Step"
+            titleLabel.text = title
+            addTitle(titleLabel)
+            
+            let p1 = "Leadership has a rhythm and beat to it. You have to know the right time to step in and when to step out. Star leaders feel the beat and make the appropriate steps. They don’t take their direct reports problems or \"monkeys\", but help them deal with their \"monkeys\" with support and resources. Rank yourself on each of the steps, on a 1-10. Practice the steps which will help you the most to become good at all the steps."
                 .styleAll(bodyStyle.paragraphStyle(paragraph))
                 .attributedString
             let p1View = UITextView()
@@ -54,27 +72,10 @@ class ChapterView: UIScrollView {
             p1View.snp.makeConstraints { (make) in
                 make.left.equalToSuperview().inset(edgeMargin)
                 make.right.equalToSuperview().inset(edgeMargin)
-                make.centerX.equalToSuperview()
                 make.top.equalTo(titleLabel.snp.bottom).offset(edgeMargin)
             }
-            
-            let p2 = "Below are tools that will assist you in becoming a Star Performer. Use these tools to prepare, practice, inform and perform."
-                .styleAll(bodyStyle.paragraphStyle(paragraph))
-                .attributedString
-            let p2View = UITextView()
-            p2View.attributedText = p2
-            p2View.configure()
-            addSubview(p2View)
-            p2View.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview().inset(edgeMargin)
-                make.right.equalToSuperview().inset(edgeMargin)
-                make.centerX.equalToSuperview()
-                make.top.equalTo(p1View.snp.bottom).offset(edgeMargin)
-            })
-            
-            //TODO: Add table
-            
-            let t2 = "Leadership Keys"
+
+            let t2 = "1. Step In"
                 .styleAll(subtitleStyle)
                 .attributedString
             let t2View = UITextView()
@@ -84,42 +85,126 @@ class ChapterView: UIScrollView {
             t2View.snp.makeConstraints({ (make) in
                 make.left.equalToSuperview().inset(edgeMargin)
                 make.right.equalToSuperview().inset(edgeMargin)
-                make.centerX.equalToSuperview()
-                make.top.equalTo(p2View.snp.bottom).offset(edgeMargin * 2)
+                make.top.equalTo(p1View.snp.bottom).offset(edgeMargin * 2)
             })
             
-            let q1 = "\"Every leader I have worked with has underestimated their influence on others and consequently underperformed. How do you remedy this? Take <b>micro-initiatives</b> daily and create <b>macro-impacts</b>.\" <i>Relly Nadler, Psy.D. - 2006-2011</i>"
-                .style(tags: [b, i])
-                .styleAll(quoteStyle)
+            let p2 = "Set the vision, systems and structure, clarify expectations, identify the deliverables and timetable, establish resources available, encourage and motivate."
+                .styleAll(bodyStyle.paragraphStyle(paragraph))
                 .attributedString
-            
-            let q1Text = UITextView()
-            q1Text.attributedText = q1
-            q1Text.configure()
-            let q1View = UIView()
-            addSubview(q1View)
-            q1View.backgroundColor = UIColor.athensGray
-            
-            q1View.addSubview(q1Text)
-            q1Text.snp.makeConstraints({ (make) in
+            let p2View = UITextView()
+            p2View.attributedText = p2
+            p2View.configure()
+            addSubview(p2View)
+            p2View.snp.makeConstraints { (make) in
                 make.left.equalToSuperview().inset(edgeMargin)
                 make.right.equalToSuperview().inset(edgeMargin)
-                make.top.equalToSuperview().inset(edgeMargin)
-            })
-            
-            q1View.snp.makeConstraints({ (make) in
-                make.left.equalToSuperview()
-                make.right.equalToSuperview()
                 make.top.equalTo(t2View.snp.bottom).offset(edgeMargin)
-                make.bottom.equalTo(q1Text.snp.bottom).offset(edgeMargin)
+            }
+            
+            let t3 = "Step In - If it’s going well"
+                .styleAll(h3)
+                .attributedString
+            let t3View = UITextView()
+            t3View.attributedText = t3
+            t3View.configure()
+            addSubview(t3View)
+            t3View.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalTo(p2View.snp.bottom).offset(edgeMargin)
             })
             
-            break
-        case 1:
-            //MARK:- Chapter 1
-            let title = "Leadership Two-Step"
-            titleLabel.text = title
-            addTitle(titleLabel)
+            let p3 = "Support and acknowledge, spread the news, codify what is working well to replicate. Hold the accountability. Monitor, evaluate and adjust. Reiterate the vision and deliverables."
+                .styleAll(bodyStyle.paragraphStyle(paragraph))
+                .attributedString
+            let p3View = UITextView()
+            p3View.attributedText = p3
+            p3View.configure()
+            addSubview(p3View)
+            p3View.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalTo(t3View.snp.bottom)
+            }
+            
+            let t4 = "Step In - If it’s not going well"
+                .styleAll(h3)
+                .attributedString
+            let t4View = UITextView()
+            t4View.attributedText = t4
+            t4View.configure()
+            addSubview(t4View)
+            t4View.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalTo(p3View.snp.bottom).offset(edgeMargin)
+            })
+            
+            let p4 = "\"Right the ship\". Understand what is the issue and what they have tried. Make a decision quickly after you have checked in with them. Reiterate the vision and deliverables. Clarify expectations and resources."
+                .styleAll(bodyStyle.paragraphStyle(paragraph))
+                .attributedString
+            let p4View = UITextView()
+            p4View.attributedText = p4
+            p4View.configure()
+            addSubview(p4View)
+            p4View.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalTo(t4View.snp.bottom)
+            }
+        
+            let t5 = "2. Step Out"
+                .styleAll(subtitleStyle)
+                .attributedString
+            let t5View = UITextView()
+            t5View.attributedText = t5
+            t5View.configure()
+            addSubview(t5View)
+            t5View.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalTo(p4View.snp.bottom).offset(edgeMargin * 2)
+            })
+            
+            let p5 = "Leave alone and let them come to you if they have questions, Empower and encourage them to use their own best judgment. Redirect to others. Manage resources. Fight the urge to step in and take over. Recognize and support. Don't take their problems or \"monkeys.\""
+                .styleAll(bodyStyle.paragraphStyle(paragraph))
+                .attributedString
+            let p5View = UITextView()
+            p5View.attributedText = p5
+            p5View.configure()
+            addSubview(p5View)
+            p5View.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalTo(t5View.snp.bottom).offset(edgeMargin)
+            }
+            
+            let t6 = "Repeat steps as needed"
+                .styleAll(h3)
+                .attributedString
+            let t6View = UITextView()
+            t6View.attributedText = t6
+            t6View.configure()
+            addSubview(t6View)
+            t6View.snp.makeConstraints({ (make) in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(p5View.snp.bottom)
+            })
+            
+            let hr1 = addHorizontalRule(after: t6View)
+            
+            let t7 = "Leadership Keys"
+                .styleAll(subtitleStyle)
+                .attributedString
+            let t7View = UITextView()
+            t7View.attributedText = t7
+            t7View.configure()
+            addSubview(t7View)
+            t7View.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalTo(hr1.snp.bottom).offset(edgeMargin)
+            })
             
             break
         case 2:
@@ -198,5 +283,95 @@ class ChapterView: UIScrollView {
             make.right.equalToSuperview().inset(edgeMargin)
             make.centerX.equalToSuperview()
         }
+    }
+    
+    func addHeading(after: UIView, level: Int, withText hText: String) -> UIView {
+        var headingStyle: Style
+        var topMargin: CGFloat = 0
+        switch level {
+        case 1:
+            headingStyle = titleStyle
+        case 2:
+            headingStyle = subtitleStyle
+            topMargin = edgeMargin
+        case 3:
+            headingStyle = h3
+        default:
+            headingStyle = titleStyle
+        }
+        let styledText = hText
+            .styleAll(headingStyle)
+            .attributedString
+        let headingView = UITextView()
+        headingView.attributedText = styledText
+        headingView.configure()
+        addSubview(headingView)
+        headingView.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview().inset(edgeMargin)
+            make.right.equalToSuperview().inset(edgeMargin)
+            make.top.equalTo(after.snp.bottom).offset(topMargin)
+        })
+        return headingView
+    }
+    
+    func addParagraph(after: UIView, withText pText: String) -> UIView {
+        let styledText = pText
+            .style(tags: [i, b])
+            .styleAll(bodyStyle.paragraphStyle(paragraph))
+            .attributedString
+        let pView = UITextView()
+        pView.attributedText = styledText
+        pView.configure()
+        addSubview(pView)
+        pView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().inset(edgeMargin)
+            make.right.equalToSuperview().inset(edgeMargin)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(after.snp.bottom).offset(edgeMargin)
+        }
+        return pView
+    }
+    
+    func addHorizontalRule(after: UIView) -> UIView {
+        let hRule = UIView()
+        hRule.backgroundColor = UIColor.athensGray
+        addSubview(hRule)
+        hRule.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview().inset(edgeMargin)
+            make.right.equalToSuperview().inset(edgeMargin)
+            make.top.equalTo(after.snp.bottom).offset(edgeMargin)
+            make.height.equalTo(2)
+        })
+        return hRule
+    }
+    
+    func addQuote(after: UIView, withText qText: String) -> UIView {
+        let styledText = qText
+            .style(tags: [b, i])
+            .styleAll(quoteStyle)
+            .attributedString
+        
+        let quoteText = UITextView()
+        quoteText.attributedText = styledText
+        quoteText.configure()
+        let quoteView = UIView()
+        addSubview(quoteView)
+        quoteView.backgroundColor = UIColor.athensGray
+        
+        quoteView.addSubview(quoteText)
+        quoteText.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview().inset(edgeMargin)
+            make.right.equalToSuperview().inset(edgeMargin)
+            make.top.equalToSuperview().inset(edgeMargin)
+        })
+        
+        quoteView.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalTo(after.snp.bottom).offset(edgeMargin)
+            make.bottom.equalTo(quoteText.snp.bottom).offset(edgeMargin)
+        })
+        
+        return quoteView
     }
 }
