@@ -96,7 +96,9 @@ class ChapterView: UIScrollView {
             
             let t7 = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
             
-            let q1 = addQuote(after: t7, withText: "\"Leaders have 50-70% influence over the climate of their team.\" <i>Hay Group in Nadler, 2011</i>")
+            let l1 = addBulletedList(after: t7, withItems: ["<b>Tool:</b> Leadership Two-Step", "<b>Competency:</b> Leadership, Initiative"])
+            
+            let q1 = addQuote(after: l1, withText: "\"Leaders have 50-70% influence over the climate of their team.\" <i>Hay Group in Nadler, 2011</i>")
             _ = addQuote(after: q1, withText: "\"77% of companies say they don’t have enough successors to their current senior managers.\" <i>Right Management Consultants (2006)</i>")
             
             break
@@ -219,7 +221,6 @@ class ChapterView: UIScrollView {
         pView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
-            make.centerX.equalToSuperview()
             make.top.equalTo(after.snp.bottom)
         }
         return pView
@@ -261,10 +262,42 @@ class ChapterView: UIScrollView {
         quoteView.snp.makeConstraints({ (make) in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.top.equalTo(after.snp.bottom).offset(edgeMargin)
+            make.top.equalTo(after.snp.bottom)
             make.bottom.equalTo(quoteText.snp.bottom).offset(edgeMargin)
         })
         
         return quoteView
+    }
+    
+    func addBulletedList(after: UIView, withItems items: [String]) -> UIView {
+        // make paragraph style
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: NSDictionary() as! [String : Any])]
+        paragraphStyle.defaultTabInterval = 15
+        paragraphStyle.firstLineHeadIndent = 0
+        paragraphStyle.headIndent = 15
+        
+        let fullString: NSMutableAttributedString = ""
+            .styleAll(bodyStyle)
+            .attributedString as! NSMutableAttributedString
+        for item in items {
+            let formattedString = "\u{2022} \(item)\n"
+                .style(tags: [b, i])
+                .styleAll(bodyStyle.paragraphStyle(paragraphStyle))
+                .attributedString
+            fullString.append(formattedString)
+        }
+        
+        let listView = UITextView()
+        listView.attributedText = fullString
+        listView.configure()
+        addSubview(listView)
+        listView.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview().inset(edgeMargin)
+            make.right.equalToSuperview().inset(edgeMargin)
+            make.top.equalTo(after.snp.bottom)
+        })
+        
+        return listView
     }
 }
