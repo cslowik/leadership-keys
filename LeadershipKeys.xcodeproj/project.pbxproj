@@ -10,6 +10,7 @@
 		831BDD271EAABA2C00E8121A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */; };
 		833CB8B61EAF8F5E008CC182 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CB8B51EAF8F5E008CC182 /* TextStyles.swift */; };
 		833CB8D91EAFABDE008CC182 /* UITextView-configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CB8D81EAFABDE008CC182 /* UITextView-configuration.swift */; };
+		833CB8DB1EB0DCC9008CC182 /* MultiColumnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833CB8DA1EB0DCC9008CC182 /* MultiColumnTableViewCell.swift */; };
 		834E4D151E9FE03400A92EC3 /* NSObject-CallSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */; };
 		8366C9FB1EA008830084172E /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FA1EA008830084172E /* MenuVC.swift */; };
 		8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FC1EA00A1C0084172E /* ArticleVC.swift */; };
@@ -40,6 +41,7 @@
 		833CB8B51EAF8F5E008CC182 /* TextStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextStyles.swift; path = Utility/TextStyles.swift; sourceTree = "<group>"; };
 		833CB8B71EAF92C5008CC182 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		833CB8D81EAFABDE008CC182 /* UITextView-configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextView-configuration.swift"; path = "Extensions/UITextView-configuration.swift"; sourceTree = "<group>"; };
+		833CB8DA1EB0DCC9008CC182 /* MultiColumnTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiColumnTableViewCell.swift; path = Views/MultiColumnTableViewCell.swift; sourceTree = "<group>"; };
 		834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject-CallSelector.swift"; path = "Extensions/NSObject-CallSelector.swift"; sourceTree = "<group>"; };
 		8366C9FA1EA008830084172E /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = Controllers/MenuVC.swift; sourceTree = "<group>"; };
 		8366C9FC1EA00A1C0084172E /* ArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleVC.swift; path = Controllers/ArticleVC.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */,
 				8367686F1EA5312100CEFEC3 /* ContentsTableViewCell.swift */,
 				831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */,
+				833CB8DA1EB0DCC9008CC182 /* MultiColumnTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				833CB8D91EAFABDE008CC182 /* UITextView-configuration.swift in Sources */,
 				833CB8B61EAF8F5E008CC182 /* TextStyles.swift in Sources */,
 				836768701EA5312100CEFEC3 /* ContentsTableViewCell.swift in Sources */,
+				833CB8DB1EB0DCC9008CC182 /* MultiColumnTableViewCell.swift in Sources */,
 				83CA2E3D1EA68E7700EA5D95 /* FileHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

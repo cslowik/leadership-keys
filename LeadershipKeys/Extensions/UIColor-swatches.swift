@@ -17,7 +17,7 @@ extension UIColor {
         static let loblolly: UIColor = UIColor(red:0.718, green:0.769, blue:0.796, alpha:1.000)             // light gray
         static let ebonyClay: UIColor = UIColor(red:0.110, green:0.141, blue:0.161, alpha:1.000)            // dark text
         static let azureRadiance: UIColor = UIColor(red:0.000, green:0.569, blue:0.918, alpha:1.000)        // blue
-        static let athensGray: UIColor = UIColor(red:0.969, green:0.973, blue:0.980, alpha:1.000)           // light gray cell background
+        static let athensGray: UIColor = UIColor(red:0.969, green:0.973, blue:0.980, alpha:1.000)           // light gray cell bg
     }
     
     //// Colors

@@ -15,10 +15,16 @@ enum ListStyle {
     case number
 }
 
-class ChapterView: UIScrollView {
+// Cell identifiers
+let singleCell = "singleCellType"
+let doubleCell = "doubleCellType"
+
+class ChapterView: UIScrollView, UITableViewDataSource, UITableViewDelegate {
     
     let paragraph = NSMutableParagraphStyle()
     let edgeMargin: CGFloat = UIScreen.main.bounds.width * 0.024
+    
+    var tables: [UITableView] = []
 
     init(frame: CGRect, chapter: Int) {
         super.init(frame: frame)
@@ -315,14 +321,24 @@ class ChapterView: UIScrollView {
     
     func addTable(after: UIView, withData: [String]) -> UIView {
         let table = UITableView()
-        
+        table.register(MultiColumnTableViewCell.self , forCellReuseIdentifier: singleCell)
         
         return table
     }
     
     func addTable(after: UIView, withData: ([String],[String])) -> UIView {
         let table = UITableView()
+        table.register(MultiColumnTableViewCell.self , forCellReuseIdentifier: doubleCell)
         
         return table
     }
+    
+    //MARK:- UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableData[tableView.tag].count
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
 }
