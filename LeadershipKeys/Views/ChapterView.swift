@@ -10,6 +10,11 @@ import UIKit
 import SnapKit
 import Atributika
 
+enum ListStyle {
+    case bullet
+    case number
+}
+
 class ChapterView: UIScrollView {
     
     let paragraph = NSMutableParagraphStyle()
@@ -96,7 +101,9 @@ class ChapterView: UIScrollView {
             
             let t7 = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
             
-            let l1 = addBulletedList(after: t7, withItems: ["<b>Tool:</b> Leadership Two-Step", "<b>Competency:</b> Leadership, Initiative"])
+            let l1 = addList(after: t7,
+                             withItems: ["<b>Tool:</b> Leadership Two-Step", "<b>Competency:</b> Leadership, Initiative"],
+                             listStyle: .number)
             
             let q1 = addQuote(after: l1, withText: "\"Leaders have 50-70% influence over the climate of their team.\" <i>Hay Group in Nadler, 2011</i>")
             _ = addQuote(after: q1, withText: "\"77% of companies say they don’t have enough successors to their current senior managers.\" <i>Right Management Consultants (2006)</i>")
@@ -269,7 +276,7 @@ class ChapterView: UIScrollView {
         return quoteView
     }
     
-    func addBulletedList(after: UIView, withItems items: [String]) -> UIView {
+    func addList(after: UIView, withItems items: [String], listStyle: ListStyle) -> UIView {
         // make paragraph style
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: NSDictionary() as! [String : Any])]
@@ -277,17 +284,22 @@ class ChapterView: UIScrollView {
         paragraphStyle.firstLineHeadIndent = 0
         paragraphStyle.headIndent = 15
         
+        var marker = "\u{2022} "
+        
+        // set up the strings, add bullets and style
         let fullString: NSMutableAttributedString = ""
             .styleAll(bodyStyle)
             .attributedString as! NSMutableAttributedString
-        for item in items {
-            let formattedString = "\u{2022} \(item)\n"
+        for (index, item) in items.enumerated() {
+            if listStyle == .number { marker = "\(index + 1). " }
+            let formattedString = (marker + "\(item)\n")
                 .style(tags: [b, i])
                 .styleAll(bodyStyle.paragraphStyle(paragraphStyle))
                 .attributedString
             fullString.append(formattedString)
         }
         
+        // configure the view
         let listView = UITextView()
         listView.attributedText = fullString
         listView.configure()
@@ -299,5 +311,18 @@ class ChapterView: UIScrollView {
         })
         
         return listView
+    }
+    
+    func addTable(after: UIView, withData: [String]) -> UIView {
+        let table = UITableView()
+        
+        
+        return table
+    }
+    
+    func addTable(after: UIView, withData: ([String],[String])) -> UIView {
+        let table = UITableView()
+        
+        return table
     }
 }
