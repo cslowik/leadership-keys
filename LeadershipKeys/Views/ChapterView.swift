@@ -182,6 +182,65 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
+            let h1 = addHeading(after: titleLabel, level: 2, withText: "<i>S</i> - Set the Stage")
+            let h2 = addHeading(after: h1, level: 3, withText: "Intention, Readiness to listen")
+            let l1 = addList(after: h2,
+                             withItems: ["\"I’d like to talk to you about something–will this time work?\"",
+                                                    "\"My intention is to help you develop and to work together on this.\"",
+                                                    "\"Can I give you some feedback?\""],
+                             listStyle: .bullet)
+            
+            let h3 = addHeading(after: l1, level: 2, withText: "<i>S</i> - State the Solution")
+            let h4 = addHeading(after: h3, level: 3, withText: "What happened and where?")
+            let l2 = addList(after: h4,
+                             withItems: ["\"In the meeting today…\"",
+                                         "\"When you spoke to _______.\"",
+                                         "\"In the report you wrote _______.\""],
+                             listStyle: .bullet)
+            
+            let h5 = addHeading(after: l2, level: 2, withText: "<i>B</i> - State the Behavior")
+            let h6 = addHeading(after: h5, level: 3, withText: "What did you see or hear without interpretations?")
+            let l3 = addList(after: h6,
+                             withItems: ["\"When you came late to the meeting _______.\"",
+                                         "\"When you said _______.\"",
+                                         "\"Three people said _______.\"",
+                                         "\"I saw two errors _______.\"",
+                                         "\"When the report was late _______.\""],
+                             listStyle: .bullet)
+            
+            let h7 = addHeading(after: l3, level: 2, withText: "<i>I</i> - State the Impact")
+            let h8 = addHeading(after: h7, level: 3, withText: "On multiple stakeholders and time frames")
+            let l4 = addList(after: h8,
+                             withItems: ["\"The customer was disappointed _______.\"",
+                                         "\"Others on the team were angry _______.\"",
+                                         "\"This is a poor reflection on you, because _______.\"",
+                                         "\"The organization wondered if _______.\"",
+                                         "\"We lost money and time _______.\"",
+                                         "\"My boss asked me what was happening and was concerned _______.\"",
+                                         "\"I lost trust, I was embarrassed _______.\""],
+                             listStyle: .bullet)
+            
+            let h9 = addHeading(after: l4, level: 2, withText: "<i>R</i> - Resolution")
+            let h10 = addHeading(after: h9, level: 3, withText: "On multiple stakeholders and time frames")
+            let l5 = addList(after: h10,
+                             withItems: ["\"What thoughts do you have on how this can be resolved?\"",
+                                         "\"How can we prevent this from happening again?\"",
+                                         "\"Next time I’d like to see this happen _______.\"",
+                                         "\"Instead can you do…\""],
+                             listStyle: .bullet)
+            
+            let hr1 = addHorizontalRule(after: l5)
+            let leadershipHeading = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            let leadershipParagraph = addParagraph(after: leadershipHeading, withText: "The Ken Blanchard Company (2006) found the top three things leaders FAIL to do are:")
+            let leadershipItems = addList(after: leadershipParagraph,
+                                          withItems: ["Failing to provide appropriate feedback (praise, redirection) 82%",
+                                                      "Failing to listen to or involve others in the process 81%",
+                                                      "Failing to use a leadership style that is appropriate to the person, task, and situation (oversupervising or undersupervising) 76%"],
+                                          listStyle: .number)
+            _ = addList(after: leadershipItems,
+                        withItems: ["<b>Tool:</b> Feedback", "<b>Competency:</b> Communication, Teamwork"],
+                        listStyle: .bullet)
+            
             break
         case 4:
             //MARK:- Chapter 4
