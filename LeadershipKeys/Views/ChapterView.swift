@@ -56,7 +56,7 @@ class ChapterView: UIScrollView {
             
             let p2 = addParagraph(after: p1, withText: "Below are tools that will assist you in becoming a Star Performer. Use these tools to prepare, practice, inform and perform.")
             
-            let table1 = addTable(after: p2, withData: ["<b>Tools</b>", "Leadership Two-Step", "Delegation"])
+            let table1 = addMultiTable(after: p2, withData: [["<b>Tools</b>", "<b>Tools</b>"], ["Leadership Two-Step", "The other thing"], ["Delegation", "Delegation"]])
             
             let hr1 = addHorizontalRule(after: table1)
             
@@ -375,9 +375,70 @@ class ChapterView: UIScrollView {
         return tableView
     }
     
-    func addTable(after: UIView, withData data: ([String],[String])) -> UIView {
-        let table = UIStackView()
+    func addMultiTable(after: UIView, withData data: [[String]]) -> UIView {
+        // make a view for each item in data array
+        var rows: [UIView] = []
         
-        return table
+        for row in data {
+            var columns: [UIView] = []
+            for cellText in row {
+                // make styled text
+                let styledText = cellText
+                    .style(tags: [i, b])
+                    .styleAll(quoteStyle)
+                    .attributedString
+                
+                // create view for text
+                let cellTextView = UILabel()
+                cellTextView.attributedText = styledText
+                
+                // create view to hold textview and draw border
+                let cellView = UIView()
+                cellView.layer.borderColor = UIColor.loblolly.cgColor
+                cellView.layer.borderWidth = 0.5
+                cellView.addSubview(cellTextView)
+                cellTextView.snp.makeConstraints({ (make) in
+                    make.left.equalToSuperview().inset(edgeMargin)
+                    make.right.equalToSuperview().inset(edgeMargin)
+                    make.height.equalTo(48)
+                    make.top.equalToSuperview()
+                })
+                columns.append(cellView)
+            }
+            let rowTable = UIStackView(arrangedSubviews: columns)
+            rowTable.axis = .horizontal
+            rowTable.distribution = .fillEqually
+            rowTable.alignment = .fill
+            rowTable.spacing = 0
+            rows.append(rowTable)
+        }
+        
+        let tableView = UIView()
+        tableView.layer.borderColor = UIColor.loblolly.cgColor
+        tableView.layer.borderWidth = 1.0
+        tableView.layer.cornerRadius = 3.0
+        tableView.clipsToBounds = true
+        addSubview(tableView)
+        tableView.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview().inset(edgeMargin)
+            make.right.equalToSuperview().inset(edgeMargin)
+            make.top.equalTo(after.snp.bottom)
+            make.height.equalTo(rows.count * 48)
+        })
+        
+        let table = UIStackView(arrangedSubviews: rows)
+        table.axis = .vertical
+        table.distribution = .fillEqually
+        table.alignment = .fill
+        table.spacing = 0
+        tableView.addSubview(table)
+        table.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalTo(rows.count * 48)
+        })
+        
+        return tableView
     }
 }
