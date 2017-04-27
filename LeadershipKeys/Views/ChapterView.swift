@@ -119,7 +119,7 @@ class ChapterView: UIScrollView {
             
             let l1 = addList(after: t7,
                              withItems: ["<b>Tool:</b> Leadership Two-Step", "<b>Competency:</b> Leadership, Initiative"],
-                             listStyle: .number)
+                             listStyle: .bullet)
             
             let q1 = addQuote(after: l1, withText: "\"Leaders have 50-70% influence over the climate of their team.\" <i>Hay Group in Nadler, 2011</i>")
             _ = addQuote(after: q1, withText: "\"77% of companies say they don’t have enough successors to their current senior managers.\" <i>Right Management Consultants (2006)</i>")
@@ -131,6 +131,50 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
+            let p1 = addParagraph(after: titleLabel, withText: "It is important to be very clear how you delegate. The following steps will help make you sure you covered all the key points.")
+            
+            let h1 = addHeading(after: p1, level: 2, withText: "Desired Results")
+            let h2 = addHeading(after: h1, level: 3, withText: "The big picture, beginning with the end in mind.")
+            let l1 = addList(after: h2,
+                             withItems: ["What are you trying to accomplish?",
+                                         "What are the key goals or deliverables?",
+                                         "What kind of relationship do you want with your direct reports?"],
+                             listStyle: .bullet)
+            
+            let h3 = addHeading(after: l1, level: 2, withText: "Guidelines")
+            let h4 = addHeading(after: h3, level: 3, withText: "More specifics, how to get it done.")
+            let l2 = addList(after: h4, withItems: ["Key do’s and don’ts.",
+                                                    "Don’t spend more than X amount of time or money.",
+                                                    "Check in with you at what points?"],
+                             listStyle: .bullet)
+            let p2 = addParagraph(after: l2, withText: "<b>Levels of initiative:\nwhen to CHECK BACK</b>")
+            let l3 = addList(after: p2,
+                             withItems: ["Recommend <b>then</b> Act:\n\tThis is insurance for you. For example: personnel issues, changes that affect the project, budget or timeline and they must see you first.\n",
+                                         "Act and advise:\n\tThe person is empowered to make their own decisions and keep you informed periodically or immediately. For example: Daily routines, clarify up to what amount of money, time and resources they can use."],
+                             listStyle: .number)
+            
+            let h5 = addHeading(after: l3, level: 2, withText: "Resources")
+            let p3 = addParagraph(after: h5, withText: "What people, time, money, training, software, consultants can be used to achieve the desired result.")
+            
+            let h6 = addHeading(after: p3, level: 2, withText: "Accountabilities")
+            let l4 = addList(after: h6, withItems: ["What metrics do you have to measure the desired results?",
+                                                    "How will you know they are being successful or not?",
+                                                    "When and where will they be measured?",
+                                                    "Others also act as accountabilities, i.e. executive feedback"],
+                             listStyle: .bullet)
+            
+            let h7 = addHeading(after: l4, level: 2, withText: "Positive Impacts")
+            let p4 = addParagraph(after: h7, withText: "What are the positive impacts from achieving the desired results on you the team and the individual. For example: More challenging projects, better leadership, eligible for more training, make budget, quality product, helping the team, more respect and progress in their career goals.")
+            let h8 = addHeading(after: p4, level: 3, withText: "Negative Impacts")
+            let p5 = addParagraph(after: h8, withText: "Opposite of the positive ones above. Better to talk about them before negative consequences happen.")
+            
+            let hr1 = addHorizontalRule(after: p5)
+            let leadershipHeading = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            let leadershipList = addList(after: leadershipHeading,
+                             withItems: ["<b>Tool:</b> Delegation", "<b>Competency:</b> Developing Others"],
+                             listStyle: .bullet)
+            let leadershipQuote1 = addQuote(after: leadershipList, withText: "\"Inspiring and motivating leaders in the top 10% have higher levels of employee productivity, satisfaction, commitment, and better retention.\" <i>Zenger and Folkman, 2009</i>")
+            _ = addQuote(after: leadershipQuote1, withText: "\"77% of companies say they don’t have enough successors to their current senior managers.\" <i>Nadler (2011)</i>")
             break
         case 3:
             //MARK:- Chapter 3
@@ -295,10 +339,10 @@ class ChapterView: UIScrollView {
     func addList(after: UIView, withItems items: [String], listStyle: ListStyle) -> UIView {
         // make paragraph style
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: NSDictionary() as! [String : Any])]
-        paragraphStyle.defaultTabInterval = 15
+        paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 16, options: NSDictionary() as! [String : Any])]
+        paragraphStyle.defaultTabInterval = 16
         paragraphStyle.firstLineHeadIndent = 0
-        paragraphStyle.headIndent = 15
+        paragraphStyle.headIndent = 16
         
         var marker = "\u{2022} "
         
@@ -310,7 +354,7 @@ class ChapterView: UIScrollView {
             if listStyle == .number { marker = "\(index + 1). " }
             let formattedString = (marker + "\(item)\n")
                 .style(tags: [b, i])
-                .styleAll(bodyStyle.paragraphStyle(paragraphStyle))
+                .styleAll(listItemStyle.paragraphStyle(paragraphStyle))
                 .attributedString
             fullString.append(formattedString)
         }
