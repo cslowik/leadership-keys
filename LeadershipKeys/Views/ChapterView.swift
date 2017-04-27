@@ -15,12 +15,13 @@ enum ListStyle {
     case number
 }
 
-let screenWidth = UIScreen.main.bounds.width
 
 class ChapterView: UIScrollView {
     
     let paragraph = NSMutableParagraphStyle()
     let edgeMargin: CGFloat = UIScreen.main.bounds.width * 0.024
+    let screenWidth = UIScreen.main.bounds.width
+    let cellHeight: CGFloat = 56.0
     
     var tables: [UITableView] = []
 
@@ -56,7 +57,18 @@ class ChapterView: UIScrollView {
             
             let p2 = addParagraph(after: p1, withText: "Below are tools that will assist you in becoming a Star Performer. Use these tools to prepare, practice, inform and perform.")
             
-            let table1 = addMultiTable(after: p2, withData: [["<b>Tools</b>", "<b>Tools</b>"], ["Leadership Two-Step", "The other thing"], ["Delegation", "Delegation"]])
+            let table1 = addMultiTable(after: p2, withData: [
+                ["<b>Tools</b>", "<b>Competency</b>"],
+                ["Leadership Two-Step", "Leadership, Initiative"],
+                ["Delegation", "Developing Others"],
+                ["Giving Feedback", "Communication, Teamwork"],
+                ["Coaching for Performance", "Developing Others"],
+                ["Assumption Ladder", "Decision Making"],
+                ["Assumption Ladder", "Communication, Conflict"],
+                ["Emotional Audit", "Self-Management"],
+                ["Tell, Sell, Test", "Level of Involvement"],
+                ["Managing Up & Partnering", "Relationship Management"],
+                ["White Space", "Communication"]])
             
             let hr1 = addHorizontalRule(after: table1)
             
@@ -324,7 +336,7 @@ class ChapterView: UIScrollView {
             // make styled text
             let styledText = cellText
                 .style(tags: [i, b])
-                .styleAll(quoteStyle)
+                .styleAll(tableStyle)
                 .attributedString
             
             // create view for text
@@ -356,7 +368,7 @@ class ChapterView: UIScrollView {
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
             make.top.equalTo(after.snp.bottom)
-            make.height.equalTo(cells.count * 48)
+            make.height.equalTo(CGFloat(cells.count) * cellHeight)
         })
         
         let table = UIStackView(arrangedSubviews: cells)
@@ -369,7 +381,7 @@ class ChapterView: UIScrollView {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.top.equalToSuperview()
-            make.height.equalTo(cells.count * 48)
+            make.height.equalTo(CGFloat(cells.count) * cellHeight)
         })
         
         return tableView
@@ -385,12 +397,13 @@ class ChapterView: UIScrollView {
                 // make styled text
                 let styledText = cellText
                     .style(tags: [i, b])
-                    .styleAll(quoteStyle)
+                    .styleAll(tableStyle)
                     .attributedString
                 
                 // create view for text
                 let cellTextView = UILabel()
                 cellTextView.attributedText = styledText
+                cellTextView.numberOfLines = 0
                 
                 // create view to hold textview and draw border
                 let cellView = UIView()
@@ -400,7 +413,7 @@ class ChapterView: UIScrollView {
                 cellTextView.snp.makeConstraints({ (make) in
                     make.left.equalToSuperview().inset(edgeMargin)
                     make.right.equalToSuperview().inset(edgeMargin)
-                    make.height.equalTo(48)
+                    make.height.equalTo(cellHeight)
                     make.top.equalToSuperview()
                 })
                 columns.append(cellView)
@@ -423,7 +436,7 @@ class ChapterView: UIScrollView {
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
             make.top.equalTo(after.snp.bottom)
-            make.height.equalTo(rows.count * 48)
+            make.height.equalTo(CGFloat(rows.count) * cellHeight)
         })
         
         let table = UIStackView(arrangedSubviews: rows)
@@ -436,7 +449,7 @@ class ChapterView: UIScrollView {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.top.equalToSuperview()
-            make.height.equalTo(rows.count * 48)
+            make.height.equalTo(CGFloat(rows.count) * cellHeight)
         })
         
         return tableView
