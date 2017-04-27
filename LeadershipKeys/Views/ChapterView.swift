@@ -58,7 +58,7 @@ class ChapterView: UIScrollView {
             let p2 = addParagraph(after: p1, withText: "Below are tools that will assist you in becoming a Star Performer. Use these tools to prepare, practice, inform and perform.")
             
             let table1 = addMultiTable(after: p2, withData: [
-                ["<b>Tools</b>", "<b>Competency</b>"],
+                ["<tb>Tools</tb>", "<tb>Competency</tb>"],
                 ["Leadership Two-Step", "Leadership, Initiative"],
                 ["Delegation", "Developing Others"],
                 ["Giving Feedback", "Communication, Teamwork"],
@@ -74,7 +74,7 @@ class ChapterView: UIScrollView {
             
             let t2 = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
             
-            _ = addQuote(after: t2, withText: "\"Every leader I have worked with has underestimated their influence on others and consequently underperformed. How do you remedy this? Take <b>micro-initiatives</b> daily and create <b>macro-impacts</b>.\" <i>Relly Nadler, Psy.D. - 2006-2011</i>")
+            _ = addQuote(after: t2, withText: "\"Every leader I have worked with has underestimated their influence on others and consequently underperformed. How do you remedy this? Take <qb>micro-initiatives</qb> daily and create <qb>macro-impacts</qb>.\" <qi>Relly Nadler, Psy.D. - 2006-2011</qi>")
             
             break
         case 1:
@@ -121,8 +121,8 @@ class ChapterView: UIScrollView {
                              withItems: ["<b>Tool:</b> Leadership Two-Step", "<b>Competency:</b> Leadership, Initiative"],
                              listStyle: .bullet)
             
-            let q1 = addQuote(after: l1, withText: "\"Leaders have 50-70% influence over the climate of their team.\" <i>Hay Group in Nadler, 2011</i>")
-            _ = addQuote(after: q1, withText: "\"77% of companies say they don’t have enough successors to their current senior managers.\" <i>Right Management Consultants (2006)</i>")
+            let q1 = addQuote(after: l1, withText: "\"Leaders have 50-70% influence over the climate of their team.\" <qi>Hay Group in Nadler, 2011</qi>")
+            _ = addQuote(after: q1, withText: "\"77% of companies say they don’t have enough successors to their current senior managers.\" <qi>Right Management Consultants (2006)</qi>")
             
             break
         case 2:
@@ -248,6 +248,63 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
+            let p1 = addParagraph(after: titleLabel, withText: "When coaching, it is important to save your advice or feedback to the end. Many managers in wanting to be helpful and to do their job well, go to step 5 immediately and the employee doesn’t feel heard or honored. You may have only thought about their problem for 3 seconds and give your answer, when your employee could have spent hours or days thinking about this issue. Often they don’t want an answer but validation for their thinking. Use the following steps:")
+            
+            let h1 = addHeading(after: p1, level: 2, withText: "Hear the problem or issue fully")
+            let l1 = addList(after: h1, withItems: ["What happened?",
+                                                    "When did it happen?",
+                                                    "Why do they think it occurred?",
+                                                    "Reflect back the content and emotions that you heard."],
+                             listStyle: .bullet)
+            
+            let h2 = addHeading(after: l1, level: 2, withText: "Get more details")
+            let l2 = addList(after: h2, withItems: ["Find out what they have tried?",
+                                                    "How long has it been going on for?",
+                                                    "Who has been affected or impacted by the problem?",
+                                                    "What does anyone else think the problem is?",
+                                                    "Is there something that worked even part of the time?",
+                                                    "Reflect back the content and emotions that you heard."],
+                             listStyle: .bullet)
+            
+            let h3 = addHeading(after: l2, level: 2, withText: "Honor their ideas for a solution")
+            let l3 = addList(after: h3, withItems: ["It is their problem what do they think should be done next?",
+                                                    "What is the benefit of their idea?",
+                                                    "How long do they think it will take?",
+                                                    "What major obstacles do they see with this solution?",
+                                                    "What other resources will they need?",
+                                                    "How will they know if it’s working or not?",
+                                                    "If there is more than one solution, ask about the merit of each. If they had to rank each answer, which is the highest and why?"],
+                             listStyle: .bullet)
+            
+            let h4 = addHeading(after: l3, level: 2, withText: "Ask if they want your feedback")
+            let l4 = addList(after: h4, withItems: ["If not, just confirm what they will do",
+                                                    "Offer it if you feel they really need it but they don’t want to hear it"],
+                             listStyle: .bullet)
+            
+            let h5 = addHeading(after: l4, level: 2, withText: "Give your advice or feedback and make a plan")
+            let l5 = addList(after: h5, withItems: ["Don’t just give the answer but use this as a mentoring moment",
+                                                    "Make your thinking visible to them",
+                                                    "What are your considerations for this choice?",
+                                                    "Why did you select this?",
+                                                    "What did you consider but rule out, and why?",
+                                                    "In a similar experience you might have had, what was the impact of that decision?",
+                                                    "How would you have improved on it knowing what you know today?",
+                                                    "What things did they not consider with their choice, unintended consequences, impact on stakeholders, resources needed, time needed to implement it, skills needed?"],
+                             listStyle: .bullet)
+            
+            let h6 = addHeading(after: l5, level: 2, withText: "PLAN")
+            let l6 = addList(after: h6, withItems: ["What will be their next step?",
+                                                    "When should they check back with you?",
+                                                    "How will they know it's working?"],
+                             listStyle: .bullet)
+            
+            let hr1 = addHorizontalRule(after: l6)
+            let leadershipHeading = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            let leadershipList = addList(after: leadershipHeading,
+                                         withItems: ["<b>Tool:</b> Coaching", "<b>Competency:</b> Developing Others"],
+                                         listStyle: .bullet)
+            _ = addQuote(after: leadershipList, withText: "\"Some 66% of employees today report they have too little interaction with their bosses and ONLY 21% know they are on track.\" <qi>Leadership IQ, 2010</qi>")
+
             break
         case 5:
             //MARK:- Chapter 5
@@ -255,6 +312,28 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
+            let l1 = addList(after: titleLabel,
+                             withItems: ["Are there biases in your thinking?",
+                                                            "Have you considered multiple assumptions?",
+                                                            "Have you invited others to challenge and support your thinking as you go up the ladder?",
+                                                            "Dialogue is low on the ladder, debate is at the top rungs.",
+                                                            "Have you made your thinking visible to others?"],
+                             listStyle: .bullet)
+            
+            let h1 = addHeading(after: l1, level: 2, withText: "Your Ladder")
+            let t1 = addTable(after: h1, withData: ["I take <tb>actions</tb> based on my conclusions",
+                                                    "I draw <tb>conclusions</tb>",
+                                                    "I make <tb>assumptions</tb> based on what I've selected",
+                                                    "I <tb>select</tb> data to observe",
+                                                    "<tb>Available data</tb> and experiences*"])
+            let p1 = addParagraph(after: t1, withText: "*as a video recorder might capture it")
+            
+            let hr1 = addHorizontalRule(after: p1)
+            let leadershipHeading = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            let leadershipList = addList(after: leadershipHeading,
+                                         withItems: ["<b>Tool:</b> Assumption Ladder", "<b>Competency:</b> Decision Making"],
+                                         listStyle: .bullet)
+            _ = addQuote(after: leadershipList, withText: "\"The bottom line of your communication is you will be MISUNDERSTOOD and MISINTERPRETED. What if you started all communication with that premise, what would you do differently?\" <qi>Relly Nadler, Psy.D. 2011</qi>")
             break
         case 6:
             //MARK:- Chapter 6
@@ -368,7 +447,7 @@ class ChapterView: UIScrollView {
     
     func addQuote(after: UIView, withText qText: String) -> UIView {
         let styledText = qText
-            .style(tags: [b, i])
+            .style(tags: [qb, qi])
             .styleAll(quoteStyle)
             .attributedString
         
@@ -439,13 +518,14 @@ class ChapterView: UIScrollView {
         for cellText in data {
             // make styled text
             let styledText = cellText
-                .style(tags: [i, b])
+                .style(tags: [ti, tb])
                 .styleAll(tableStyle)
                 .attributedString
             
             // create view for text
             let cellTextView = UILabel()
             cellTextView.attributedText = styledText
+            cellTextView.numberOfLines = 0
             
             // create view to hold textview and draw border
             let cellView = UIView()
@@ -500,7 +580,7 @@ class ChapterView: UIScrollView {
             for cellText in row {
                 // make styled text
                 let styledText = cellText
-                    .style(tags: [i, b])
+                    .style(tags: [ti, tb])
                     .styleAll(tableStyle)
                     .attributedString
                 
