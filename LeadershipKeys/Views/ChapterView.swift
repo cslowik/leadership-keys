@@ -15,11 +15,9 @@ enum ListStyle {
     case number
 }
 
-// Cell identifiers
-let singleCell = "singleCellType"
-let doubleCell = "doubleCellType"
+let screenWidth = UIScreen.main.bounds.width
 
-class ChapterView: UIScrollView, UITableViewDataSource, UITableViewDelegate {
+class ChapterView: UIScrollView {
     
     let paragraph = NSMutableParagraphStyle()
     let edgeMargin: CGFloat = UIScreen.main.bounds.width * 0.024
@@ -58,9 +56,9 @@ class ChapterView: UIScrollView, UITableViewDataSource, UITableViewDelegate {
             
             let p2 = addParagraph(after: p1, withText: "Below are tools that will assist you in becoming a Star Performer. Use these tools to prepare, practice, inform and perform.")
             
-            //TODO: Add table
+            let table1 = addTable(after: p2, withData: ["<b>Tools</b>", "Leadership Two-Step", "Delegation"])
             
-            let hr1 = addHorizontalRule(after: p2)
+            let hr1 = addHorizontalRule(after: table1)
             
             let t2 = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
             
@@ -319,26 +317,67 @@ class ChapterView: UIScrollView, UITableViewDataSource, UITableViewDelegate {
         return listView
     }
     
-    func addTable(after: UIView, withData: [String]) -> UIView {
-        let table = UITableView()
-        table.register(MultiColumnTableViewCell.self , forCellReuseIdentifier: singleCell)
+    func addTable(after: UIView, withData data: [String]) -> UIView {
+        // make a view for each item in data array
+        var cells: [UIView] = []
+        for cellText in data {
+            // make styled text
+            let styledText = cellText
+                .style(tags: [i, b])
+                .styleAll(quoteStyle)
+                .attributedString
+            
+            // create view for text
+            let cellTextView = UILabel()
+            cellTextView.attributedText = styledText
+            
+            // create view to hold textview and draw border
+            let cellView = UIView()
+            cellView.layer.borderColor = UIColor.loblolly.cgColor
+            cellView.layer.borderWidth = 0.5
+            cellView.addSubview(cellTextView)
+            cellTextView.snp.makeConstraints({ (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.height.equalTo(48)
+                make.top.equalToSuperview()
+            })
+            
+            cells.append(cellView)
+        }
+        
+        let tableView = UIView()
+        tableView.layer.borderColor = UIColor.loblolly.cgColor
+        tableView.layer.borderWidth = 1.0
+        tableView.layer.cornerRadius = 3.0
+        tableView.clipsToBounds = true
+        addSubview(tableView)
+        tableView.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview().inset(edgeMargin)
+            make.right.equalToSuperview().inset(edgeMargin)
+            make.top.equalTo(after.snp.bottom)
+            make.height.equalTo(cells.count * 48)
+        })
+        
+        let table = UIStackView(arrangedSubviews: cells)
+        table.axis = .vertical
+        table.distribution = .fillEqually
+        table.alignment = .fill
+        table.spacing = 0
+        tableView.addSubview(table)
+        table.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalTo(cells.count * 48)
+        })
+        
+        return tableView
+    }
+    
+    func addTable(after: UIView, withData data: ([String],[String])) -> UIView {
+        let table = UIStackView()
         
         return table
     }
-    
-    func addTable(after: UIView, withData: ([String],[String])) -> UIView {
-        let table = UITableView()
-        table.register(MultiColumnTableViewCell.self , forCellReuseIdentifier: doubleCell)
-        
-        return table
-    }
-    
-    //MARK:- UITableViewDataSource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData[tableView.tag].count
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
 }
