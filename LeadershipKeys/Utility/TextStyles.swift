@@ -12,7 +12,6 @@ import Atributika
 let b = Style("b").font(.boldBodyFont)
 let i = Style("i").font(.italicBodyFont)
 let hb = Style("hb").font(.boldHeaderFont)
-let hi = Style("hi").font(.italicHeaderFont)
 let bodyStyle = Style.font(.bodyFont).foregroundColor(.slateGray)
 let listItemStyle = Style.font(.baseFont(ofSize: 16)).foregroundColor(.slateGray)
 let titleStyle = Style.font(.titleFont).foregroundColor(.ebonyClay)

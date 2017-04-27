@@ -182,7 +182,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let h1 = addHeading(after: titleLabel, level: 2, withText: "<i>S</i> - Set the Stage")
+            let h1 = addHeading(after: titleLabel, level: 2, withText: "<hb>S</hb> - Set the Stage")
             let h2 = addHeading(after: h1, level: 3, withText: "Intention, Readiness to listen")
             let l1 = addList(after: h2,
                              withItems: ["\"I’d like to talk to you about something–will this time work?\"",
@@ -190,7 +190,7 @@ class ChapterView: UIScrollView {
                                                     "\"Can I give you some feedback?\""],
                              listStyle: .bullet)
             
-            let h3 = addHeading(after: l1, level: 2, withText: "<i>S</i> - State the Solution")
+            let h3 = addHeading(after: l1, level: 2, withText: "<hb>S</hb> - State the Solution")
             let h4 = addHeading(after: h3, level: 3, withText: "What happened and where?")
             let l2 = addList(after: h4,
                              withItems: ["\"In the meeting today…\"",
@@ -198,7 +198,7 @@ class ChapterView: UIScrollView {
                                          "\"In the report you wrote _______.\""],
                              listStyle: .bullet)
             
-            let h5 = addHeading(after: l2, level: 2, withText: "<i>B</i> - State the Behavior")
+            let h5 = addHeading(after: l2, level: 2, withText: "<hb>B</hb> - State the Behavior")
             let h6 = addHeading(after: h5, level: 3, withText: "What did you see or hear without interpretations?")
             let l3 = addList(after: h6,
                              withItems: ["\"When you came late to the meeting _______.\"",
@@ -208,7 +208,7 @@ class ChapterView: UIScrollView {
                                          "\"When the report was late _______.\""],
                              listStyle: .bullet)
             
-            let h7 = addHeading(after: l3, level: 2, withText: "<i>I</i> - State the Impact")
+            let h7 = addHeading(after: l3, level: 2, withText: "<hb>I</hb> - State the Impact")
             let h8 = addHeading(after: h7, level: 3, withText: "On multiple stakeholders and time frames")
             let l4 = addList(after: h8,
                              withItems: ["\"The customer was disappointed _______.\"",
@@ -220,7 +220,7 @@ class ChapterView: UIScrollView {
                                          "\"I lost trust, I was embarrassed _______.\""],
                              listStyle: .bullet)
             
-            let h9 = addHeading(after: l4, level: 2, withText: "<i>R</i> - Resolution")
+            let h9 = addHeading(after: l4, level: 2, withText: "<hb>R</hb> - Resolution")
             let h10 = addHeading(after: h9, level: 3, withText: "On multiple stakeholders and time frames")
             let l5 = addList(after: h10,
                              withItems: ["\"What thoughts do you have on how this can be resolved?\"",
@@ -321,6 +321,7 @@ class ChapterView: UIScrollView {
             headingStyle = titleStyle
         }
         let styledText = hText
+            .style(tags: [hb])
             .styleAll(headingStyle)
             .attributedString
         let headingView = UITextView()
