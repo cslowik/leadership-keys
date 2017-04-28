@@ -341,6 +341,51 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
+            let l1 = addList(after: titleLabel,
+                             withItems: ["Communicate your thinking rung by rung.",
+                                         "Challenge others if they are at the top of the ladder."],
+                             listStyle: .bullet)
+            let p1 = addParagraph(after: l1, withText: "Below are some examples of sentences and sentence stubs that will help you and others walk up or down the ladder.")
+            
+            let h1 = addHeading(after: p1, level: 2, withText: "Actions")
+            let t1 = addMultiTable(after: h1,
+                                   withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
+                                              ["I hear your plans...", "Therefore, this is my plan..."],
+                                              ["What are they based on? How did you arrive at these plans?", "These are steps I’m taking..."]])
+            
+            let h2 = addHeading(after: t1, level: 2, withText: "Conclusions")
+            let t2 = addMultiTable(after: h2,
+                                   withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
+                                              ["Tell me what conclusion you are drawing...", "It’s obvious to me... Therefore, I feel ..."],
+                                              ["Could it be possible that...", "As a result... To summarize... My recommendation is..."]])
+           
+            let h3 = addHeading(after: t2, level: 2, withText: "Assumptions")
+            let t3 = addMultiTable(after: h3,
+                                   withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
+                                              ["Tell me what your assumptions are...", "So I'm assuming..."],
+                                              ["I’m curious, tell me more.", "Here’s what I attribute..."],
+                                              ["Is that the only way to look at it?", "My interpretation is..."]])
+            
+            let h4 = addHeading(after: t3, level: 2, withText: "Selected Data")
+            let t4 = addMultiTable(after: h4,
+                                   withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
+                                              ["What piece are you looking at?", "I am focusing on this piece."],
+                                              ["I see you're focusing on...", "Here’s what I see happening..."],
+                                              ["What is standing out to you from the data?", "This stands out to me..."]])
+            
+            let h5 = addHeading(after: t4, level: 2, withText: "Available Data")
+            let t5 = addMultiTable(after: h5,
+                                   withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
+                                              ["Give me all the facts...", "Here are all the facts"],
+                                              ["What are all the findings?", "Here are all the findings..."]])
+            
+            let hr1 = addHorizontalRule(after: t5)
+            let leadershipHeading = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            let leadershipList = addList(after: leadershipHeading,
+                                         withItems: ["<b>Tool:</b> Assumption Ladder", "<b>Competency:</b> Communication"],
+                                         listStyle: .bullet)
+            _ = addQuote(after: leadershipList, withText: "\"Companies with higher scores for their investment in human capital delivered stock returns that were FIVE times higher than that of companies with less emphasis on human capital.\" <qi>HBR in Center for Creative Leadership, 2009</qi>")
+            
             break
         case 7:
             //MARK:- Chapter 7
