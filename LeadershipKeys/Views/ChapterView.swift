@@ -639,10 +639,11 @@ class ChapterView: UIScrollView {
                 cellView.layer.borderColor = UIColor.loblolly.cgColor
                 cellView.layer.borderWidth = 0.5
                 cellView.addSubview(cellTextView)
+                let calcCellHeight = cellHeight
                 cellTextView.snp.makeConstraints({ (make) in
                     make.left.equalToSuperview().inset(edgeMargin)
                     make.right.equalToSuperview().inset(edgeMargin)
-                    make.height.equalTo(cellHeight)
+                    make.height.equalTo(calcCellHeight)
                     make.top.equalToSuperview()
                 })
                 columns.append(cellView)
