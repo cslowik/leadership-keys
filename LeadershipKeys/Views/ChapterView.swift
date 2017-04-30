@@ -347,33 +347,33 @@ class ChapterView: UIScrollView {
                              listStyle: .bullet)
             let p1 = addParagraph(after: l1, withText: "Below are some examples of sentences and sentence stubs that will help you and others walk up or down the ladder.")
             
-            let h1 = addHeading(after: p1, level: 2, withText: "Actions")
+            let h1 = addHeading(after: p1, level: 3, withText: "Actions")
             let t1 = addMultiTable(after: h1,
                                    withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
                                               ["I hear your plans...", "Therefore, this is my plan..."],
                                               ["What are they based on? How did you arrive at these plans?", "These are steps I’m taking..."]])
             
-            let h2 = addHeading(after: t1, level: 2, withText: "Conclusions")
+            let h2 = addHeading(after: t1, level: 3, withText: "Conclusions")
             let t2 = addMultiTable(after: h2,
                                    withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
                                               ["Tell me what conclusion you are drawing...", "It’s obvious to me... Therefore, I feel ..."],
                                               ["Could it be possible that...", "As a result... To summarize... My recommendation is..."]])
            
-            let h3 = addHeading(after: t2, level: 2, withText: "Assumptions")
+            let h3 = addHeading(after: t2, level: 3, withText: "Assumptions")
             let t3 = addMultiTable(after: h3,
                                    withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
                                               ["Tell me what your assumptions are...", "So I'm assuming..."],
                                               ["I’m curious, tell me more.", "Here’s what I attribute..."],
                                               ["Is that the only way to look at it?", "My interpretation is..."]])
             
-            let h4 = addHeading(after: t3, level: 2, withText: "Selected Data")
+            let h4 = addHeading(after: t3, level: 3, withText: "Selected Data")
             let t4 = addMultiTable(after: h4,
                                    withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
                                               ["What piece are you looking at?", "I am focusing on this piece."],
                                               ["I see you're focusing on...", "Here’s what I see happening..."],
                                               ["What is standing out to you from the data?", "This stands out to me..."]])
             
-            let h5 = addHeading(after: t4, level: 2, withText: "Available Data")
+            let h5 = addHeading(after: t4, level: 3, withText: "Available Data")
             let t5 = addMultiTable(after: h5,
                                    withData: [["<b>As a Listener</b>", "<b>As a Speaker</b>"],
                                               ["Give me all the facts...", "Here are all the facts"],
@@ -417,12 +417,90 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
+            let h0 = addHeading(after: titleLabel, level: 3, withText: "Leadership and Level of Involvement")
+            
+            let h1 = addHeading(after: h0, level: 3, withText: "Tell")
+            let t1 = addMultiTable(after: h1,
+                                   withData: [["<tb>When to Use</tb>", "<tb>Style</tb>"],
+                                              ["You’ve been told to do it", "\"Here's what I want us to do\""],
+                                              ["There’s no time for another solution", "\"This time, there's no choice\""]])
+            
+            let h2 = addHeading(after: t1, level: 3, withText: "Sell")
+            let t2 = addMultiTable(after: h2,
+                                   withData: [["<tb>When to Use</tb>", "<tb>Style</tb>"],
+                                              ["You've made up your mind", "\"Here's my idea\""],
+                                              ["You still need buy-in to get it done", "\"Can you support me, or do you need a better explanation?\""]])
+            
+            let h3 = addHeading(after: t2, level: 3, withText: "Test")
+            let t3 = addMultiTable(after: h3,
+                                   withData: [["<tb>When to Use</tb>", "<tb>Style</tb>"],
+                                              ["You know about 70%", "\"I'm thinking this.\""],
+                                              ["You want validation and input", "\"Do you think this will work?\""],
+                                              ["You’d like feedback about your decision", "\"What am I missing?"]])
+            
+            let h4 = addHeading(after: t3, level: 3, withText: "Consult")
+            let t4 = addMultiTable(after: h4,
+                                   withData: [["<tb>When to Use</tb>", "<tb>Style</tb>"],
+                                              ["You have a 30% idea of the result", "\"This is what I want it to end up like.\""],
+                                              ["You think there’s some more good info that could be gained", "\"What are your ideas to make this work?\""]])
+            
+            let h5 = addHeading(after: t4, level: 3, withText: "Co-create")
+            let t5 = addMultiTable(after: h5,
+                                   withData: [["<tb>When to Use</tb>", "<tb>Style</tb>"],
+                                              ["You’ve been told what to get", "\"This is where we need to go.\""],
+                                              ["You don't know how to get there", "\"I don’t have the answer.\""],
+                                              ["You have expertise and resources in the team", "\"I need your help.” “What do you think?"]])
+            let styledText = "Adapted from THE FIFTH DISCIPLINE FIELDBOOK ©1994 by Peter M. Serge.\nUsed by permission by Doubleday, a division of Random House, Inc. \n©2003-06 Relly Nadler, Psy.D. All Rights Reserved."
+                .styleAll(Style.font(.baseFont(ofSize: 11)).foregroundColor(.slateGray))
+                .attributedString
+            let citation = UITextView()
+            citation.attributedText = styledText
+            citation.configure()
+            addSubview(citation)
+            citation.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().inset(edgeMargin)
+                make.right.equalToSuperview().inset(edgeMargin)
+                make.top.equalTo(t5.snp.bottom)
+            }
+            
+            let hr1 = addHorizontalRule(after: citation)
+            let leadershipHeading = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            let leadershipList = addList(after: leadershipHeading,
+                                         withItems: ["<b>Tool:</b> Tell, Sell, Test", "<b>Competency:</b> Level of Involvement"],
+                                         listStyle: .bullet)
+            let q1 = addQuote(after: leadershipList, withText: "\"The 'manager default is to find fault' because you don’t have much time and your brain is wired to look for errors. Better to focus on what is right and what you want to have repeated.” <qi>Relly Nadler, Psy.D. 2011</qi>")
+            _ = addQuote(after: q1, withText: "Fredrickson (2009) tell us the ideal in interactions is a 3:1 positive to negative ratio")
+            
             break
         case 9:
             //MARK:- Chapter 9
             let title = "Managing Up & Partnering"
             titleLabel.text = title
             addTitle(titleLabel)
+            
+            let intro = addParagraph(after: titleLabel, withText: "When dealing with your supervisor or key customer, stakeholder or partner, it is important to understand their preferences and needs. This will help you align your performance to be viewed as a star by them. Below are questions and conversations to assist you.")
+            
+            let h1 = addHeading(after: intro, level: 3, withText: "Responsibility Alignment")
+            let p1 = addParagraph(after: h1, withText: "What do they see as your top 5 responsibilities of your position? What do you see as your top 5 responsibilities of your position? Typically only 1.5 of the five are the same, therefore you may be working on the wrong priorities. This conversation will help you work on the areas that will get you the furthest in your supervisors’ or partners’ eyes.")
+            
+            let h2 = addHeading(after: p1, level: 3, withText: "Expectations Clarification")
+            let p2 = addParagraph(after: h2, withText: "What are your supervisors or partners key expectations of you? Ask them: for this relationship to be a success, what are the key things I need to do and don’t do? Make sure you talk about responsiveness on email and voice mail.")
+            
+            let h3 = addHeading(after: p2, level: 3, withText: "Information Gathering")
+            let p3 = addParagraph(after: h3, withText: "Do they like a formal approach or informal? Should you come with reports, data, agenda and be highly organized? Or be more informal and talk about the big picture possibilities and opportunities? Mirror their language; are they visual (\"see, view\") or auditory (\"sounds like, talk, resonate\") or kinesthetic (\"get a hold of, action\")?")
+            
+            let h4 = addHeading(after: p3, level: 3, withText: "Decision Style")
+            let p4 = addParagraph(after: h4, withText: "How does your supervisor or partner make decisions? Quickly with limited data? Or deliberate with a lot of information? Do they like to discuss all the possibilities? Or should you leave the office and let them reflect on it and get back with them in a day? If you are not sure, ask them.")
+            
+            let h5 = addHeading(after: p4, level: 3, withText: "Conflict Style")
+            let p5 = addParagraph(after: h5, withText: "Do they thrive in conflict or avoid it? Do you feel each conversation is part of a debating club? Or do they strive for harmony and peace at all costs? If you are not sure, ask them.")
+            
+            let hr1 = addHorizontalRule(after: p5)
+            let leadershipHeading = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            let leadershipList = addList(after: leadershipHeading,
+                                         withItems: ["<b>Tool:</b> Managing Up", "<b>Competency:</b> Relationship Management"],
+                                         listStyle: .bullet)
+            _ = addQuote(after: leadershipList, withText: "\"People don’t leave their job they leave their boss. Your relationship with your boss affects your life satisfaction and health. Research has shown that if you feel not listened to and unfairly criticized by your boss consistently over time your chance of a heart attack goes up 30%.\" <qi>Goleman, 2006</qi>")
             
             break
         case 10:
@@ -431,6 +509,29 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
+            let intro = addParagraph(after: titleLabel, withText: "The word <i>intelligence</i> comes from a Latin derivation, meaning \"entering through the lines.\" As a leader, people are always reading into what you are saying or not saying. They fill in the white space between the lines in moments. The bold lines indicate what was said.")
+            
+            let h1 = addHeading(after: intro, level: 3, withText: "--------")
+            let p1 = addParagraph(after: h1, withText: "Negative signs indicate what gets filled in quickly by others, because they are intelligent. It is usually inaccurate, judgmental and not giving you or the leader the benefit of the doubt. It is done to have more of a sense of control.")
+            
+            let h2 = addHeading(after: p1, level: 3, withText: "++++++++")
+            let p2 = addParagraph(after: h2, withText: "Positive signs indicate what you say when you fill in the white space proactively with accurate and positive data, talking about opportunities.")
+            
+            let h3 = addHeading(after: p2, level: 3, withText: "????????")
+            let l1 = addList(after: h3,
+                             withItems: ["White space is going to get filled any way by others; you can be preventative by telling your people what you know.",
+                                "If you are not sick and tired of saying the same thing over and over again, you are not saying it enough.",
+                                "If you don’t tell your people what is going on, they will think nothing is going on."],
+                             listStyle: .bullet)
+            
+            let hr1 = addHorizontalRule(after: l1)
+            let leadershipHeading = addHeading(after: hr1, level: 2, withText: "Leadership Keys")
+            let leadershipList = addList(after: leadershipHeading,
+                                         withItems: ["<b>Tool:</b> White Space", "<b>Competency:</b> Communication"],
+                                         listStyle: .bullet)
+            let q1 = addQuote(after: leadershipList, withText: "\"Leaders who fill in the \"white space\" with both inspiration AND enthusiastic emotion have extraordinary commitment and engagement from their employees.\" <qi>Zenger and Folkman, 2009</qi>")
+            _ = addQuote(after: q1, withText: "What MICRO-INITIATIVES will you begin daily to create MACRO-IMPACTS for you and your team?")
+
             break
         default:
             break
@@ -472,7 +573,7 @@ class ChapterView: UIScrollView {
         headingView.snp.makeConstraints({ (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
-            make.top.equalTo(after.snp.bottom).offset(topMargin)
+            make.top.equalTo(after.snp.bottom).offset(topMargin * 2)
         })
         return headingView
     }
