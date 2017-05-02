@@ -36,6 +36,16 @@
 		<string>OpenSans-Semibold.ttf</string>
 		<string>OpenSans-Italic.ttf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>s3.amazonaws.com</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

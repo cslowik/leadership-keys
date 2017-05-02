@@ -23,10 +23,11 @@ class ChapterView: UIScrollView {
     let screenWidth = UIScreen.main.bounds.width
     let cellHeight: CGFloat = 56.0
     var videoPlayer: VideoPlayer?
+    var videoURL: String?
 
     init(frame: CGRect, chapter: Int) {
         super.init(frame: frame)
-        
+        videoURL = FileHelper.main.chapters[chapter]["video"]
         loadVideo()
         layoutChapter(chapter)
         showsVerticalScrollIndicator = false
@@ -39,7 +40,9 @@ class ChapterView: UIScrollView {
     
     //MARK:- Video Utility
     func loadVideo() {
-        videoPlayer = VideoPlayer(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth*(9/16)), url: "test")
+        if videoURL != nil && videoPlayer == nil {
+            videoPlayer = VideoPlayer(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth*(9/16)), url: videoURL!)
+        } else { print("Can't load video") }
     }
 
     //MARK:- Chapter Layouts
@@ -58,6 +61,8 @@ class ChapterView: UIScrollView {
             let t1 = "Emotional Intelligence Tools to go from Good to Great Leadership"
             titleLabel.text = t1
             addTitle(titleLabel)
+            
+            addSubview(videoPlayer!)
             
             let p1 = addParagraph(after: titleLabel, withText: "As leaders move up in an organization up to 90% of their success factors are in Emotional Intelligence (EI) versus Intelligence and Technical expertise. <i>(Goleman, 2006)</i> Going from good to great takes doing  5-6 competencies really well. <i>(Zenger and Folkman, 2009)</i>")
             
