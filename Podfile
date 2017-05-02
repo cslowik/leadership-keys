@@ -6,7 +6,6 @@ target 'LeadershipKeys' do
   use_frameworks!
 
   # Pods for LeadershipKeys
-  pod 'AMScrollingNavbar'
   pod 'SideMenu'
   pod 'SnapKit', '~> 3.0'
   pod 'Pages'

@@ -1,24 +1,21 @@
 PODS:
-  - AMScrollingNavbar (3.3.1)
   - Atributika (3.1.4)
   - Pages (1.0.0)
   - SideMenu (2.3.1)
   - SnapKit (3.2.0)
 
 DEPENDENCIES:
-  - AMScrollingNavbar
   - Atributika
   - Pages
   - SideMenu
   - SnapKit (~> 3.0)
 
 SPEC CHECKSUMS:
-  AMScrollingNavbar: 18b8e0ce74067828458fba73d1a9dea84614ee5c
   Atributika: 3508639d03604c956d6b0aa186de964d2c1ff6c1
   Pages: f3718e6f03a5e2787f6b0bff4becb3c7c19bcebc
   SideMenu: 2a3c3da0b3d5f78a047b2271bb7398260fcd7e3d
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: bcc5279d2af090c1e9970e71be0d21640e21e794
+PODFILE CHECKSUM: 63288640ce120543b3d8d8980ac863ce997f4597
 
 COCOAPODS: 1.2.0
