@@ -23,6 +23,7 @@
 		8399E3221EA5C2AE00F0225B /* UIFont-textStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399E3211EA5C2AE00F0225B /* UIFont-textStyles.swift */; };
 		8399E3241EA5C2BF00F0225B /* UIColor-swatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399E3231EA5C2BF00F0225B /* UIColor-swatches.swift */; };
 		839EFA4B1EAE8A3E003DDF39 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */; };
+		83A115EA1EB8F5E00094FB65 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A115E91EB8F5E00094FB65 /* VideoPlayer.swift */; };
 		83BEEE781E9FD99600CEE4EA /* ContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEEE771E9FD99600CEE4EA /* ContentsVC.swift */; };
 		83BEEE7C1E9FD9F400CEE4EA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEEE7B1E9FD9F400CEE4EA /* MainVC.swift */; };
 		83CA2E3A1EA68D3E00EA5D95 /* Contents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83CA2E391EA68D3E00EA5D95 /* Contents.plist */; };
@@ -53,6 +54,7 @@
 		8399E3211EA5C2AE00F0225B /* UIFont-textStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont-textStyles.swift"; path = "Extensions/UIFont-textStyles.swift"; sourceTree = "<group>"; };
 		8399E3231EA5C2BF00F0225B /* UIColor-swatches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor-swatches.swift"; path = "Extensions/UIColor-swatches.swift"; sourceTree = "<group>"; };
 		839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChapterView.swift; path = Views/ChapterView.swift; sourceTree = "<group>"; };
+		83A115E91EB8F5E00094FB65 /* VideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayer.swift; path = Views/VideoPlayer.swift; sourceTree = "<group>"; };
 		83BEEE771E9FD99600CEE4EA /* ContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentsVC.swift; path = Controllers/ContentsVC.swift; sourceTree = "<group>"; };
 		83BEEE7B1E9FD9F400CEE4EA /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainVC.swift; path = Controllers/MainVC.swift; sourceTree = "<group>"; };
 		83CA2E391EA68D3E00EA5D95 /* Contents.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Contents.plist; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */,
 				8367686F1EA5312100CEFEC3 /* ContentsTableViewCell.swift */,
 				831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */,
+				83A115E91EB8F5E00094FB65 /* VideoPlayer.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				834E4D151E9FE03400A92EC3 /* NSObject-CallSelector.swift in Sources */,
 				83BEEE7C1E9FD9F400CEE4EA /* MainVC.swift in Sources */,
 				839EFA4B1EAE8A3E003DDF39 /* ChapterView.swift in Sources */,
+				83A115EA1EB8F5E00094FB65 /* VideoPlayer.swift in Sources */,
 				8399E3221EA5C2AE00F0225B /* UIFont-textStyles.swift in Sources */,
 				8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */,
 				8381EFE71EA67707005AE47B /* ChapterVC.swift in Sources */,

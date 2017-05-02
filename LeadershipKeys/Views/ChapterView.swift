@@ -9,7 +9,6 @@
 import UIKit
 import SnapKit
 import Atributika
-import AVKit
 
 enum ListStyle {
     case bullet
@@ -23,10 +22,12 @@ class ChapterView: UIScrollView {
     let edgeMargin: CGFloat = UIScreen.main.bounds.width * 0.024
     let screenWidth = UIScreen.main.bounds.width
     let cellHeight: CGFloat = 56.0
-    var videoPlayer: AVPlayerViewController?
+    var videoPlayer: VideoPlayer?
 
     init(frame: CGRect, chapter: Int) {
         super.init(frame: frame)
+        
+        loadVideo()
         layoutChapter(chapter)
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
@@ -34,6 +35,11 @@ class ChapterView: UIScrollView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    //MARK:- Video Utility
+    func loadVideo() {
+        videoPlayer = VideoPlayer(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth*(9/16)), url: "test")
     }
 
     //MARK:- Chapter Layouts
@@ -801,11 +807,5 @@ class ChapterView: UIScrollView {
         })
         
         return tableView
-    }
-    
-    func addVideo(after: UIView, withURL url: URL) -> UIView {
-        
-        
-        return videoFrame
     }
 }

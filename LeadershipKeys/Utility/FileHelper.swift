@@ -41,8 +41,7 @@ class FileHelper {
     
     private func buildChapter(_ chapter: [String:String], withIndex index: Int) -> ChapterVC {
         
-        let newVC = ChapterVC(index: index, title: chapter["title"]!, subtitle: chapter["subtitle"]!)
-        
+        let newVC = ChapterVC(index: index)
         return newVC
         
     }

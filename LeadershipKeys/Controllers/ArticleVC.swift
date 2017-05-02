@@ -38,7 +38,7 @@ class ArticleVC: PagesController, ContentsDelegate, MenuDelegate {
     }
     
     func updateView() {
-        navigationItem.title = chapterViewControllers[currentIndex].chapterSubtitle
+        navigationItem.title = FileHelper.main.chapters[currentIndex]["subtitle"]
     }
     
     @IBAction func contentsTapped(_ sender: Any) {

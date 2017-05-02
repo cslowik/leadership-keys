@@ -10,25 +10,19 @@ import UIKit
 
 class ChapterVC: UIViewController {
     var chapterIndex: Int
-    var chapterTitle: String
-    var chapterSubtitle: String
     var chapterView: ChapterView! { return self.view as! ChapterView }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    init(index: Int, title: String, subtitle: String) {
+    init(index: Int) {
         chapterIndex = index
-        chapterTitle = title
-        chapterSubtitle = subtitle
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         chapterIndex = 0
-        chapterTitle = "No chapter"
-        chapterSubtitle = ""
         super.init(coder: aDecoder)
     }
     
