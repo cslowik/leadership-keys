@@ -13,6 +13,7 @@
 		834E4D151E9FE03400A92EC3 /* NSObject-CallSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */; };
 		8366C9FB1EA008830084172E /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FA1EA008830084172E /* MenuVC.swift */; };
 		8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FC1EA00A1C0084172E /* ArticleVC.swift */; };
+		8366F6901EBA988D0000AC91 /* EmailShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366F68F1EBA988D0000AC91 /* EmailShare.swift */; };
 		836768691EA51E9D00CEFEC3 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */; };
 		8367686A1EA51E9D00CEFEC3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */; };
 		8367686B1EA51E9D00CEFEC3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768671EA51E9D00CEFEC3 /* OpenSans-Regular.ttf */; };
@@ -43,6 +44,7 @@
 		834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject-CallSelector.swift"; path = "Extensions/NSObject-CallSelector.swift"; sourceTree = "<group>"; };
 		8366C9FA1EA008830084172E /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = Controllers/MenuVC.swift; sourceTree = "<group>"; };
 		8366C9FC1EA00A1C0084172E /* ArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleVC.swift; path = Controllers/ArticleVC.swift; sourceTree = "<group>"; };
+		8366F68F1EBA988D0000AC91 /* EmailShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailShare.swift; path = Utility/EmailShare.swift; sourceTree = "<group>"; };
 		836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		836768671EA51E9D00CEFEC3 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				83CA2E3C1EA68E7700EA5D95 /* FileHelper.swift */,
 				833CB8B51EAF8F5E008CC182 /* TextStyles.swift */,
+				8366F68F1EBA988D0000AC91 /* EmailShare.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				833CB8D91EAFABDE008CC182 /* UITextView-configuration.swift in Sources */,
 				833CB8B61EAF8F5E008CC182 /* TextStyles.swift in Sources */,
 				836768701EA5312100CEFEC3 /* ContentsTableViewCell.swift in Sources */,
+				8366F6901EBA988D0000AC91 /* EmailShare.swift in Sources */,
 				83CA2E3D1EA68E7700EA5D95 /* FileHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
