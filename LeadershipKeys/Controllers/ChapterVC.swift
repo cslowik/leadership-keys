@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
-class ChapterVC: UIViewController {
+class ChapterVC: UIViewController, ChapterViewDelegate {
     var chapterIndex: Int
     var chapterView: ChapterView! { return self.view as! ChapterView }
 
@@ -28,6 +30,7 @@ class ChapterVC: UIViewController {
     
     override func loadView() {
         view = ChapterView(frame: UIScreen.main.bounds, chapter: chapterIndex)
+        chapterView.chapterDelegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -36,5 +39,15 @@ class ChapterVC: UIViewController {
             contentRect = contentRect.union(contentView.frame)
         }
         chapterView.contentSize = contentRect.size
+    }
+    
+    //MARK:- ChapterViewDelegate
+    func watchVideo() {
+        let player = AVPlayer(url: URL(string: FileHelper.main.chapters[chapterIndex]["video"]!)!)
+        let playerVC = AVPlayerViewController()
+        playerVC.player = player
+        present(playerVC, animated: true) { 
+            playerVC.player?.play()
+        }
     }
 }

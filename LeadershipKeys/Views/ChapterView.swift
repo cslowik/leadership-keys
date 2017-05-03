@@ -9,15 +9,21 @@
 import UIKit
 import SnapKit
 import Atributika
+import AVKit
+import AVFoundation
 
 enum ListStyle {
     case bullet
     case number
 }
 
+protocol ChapterViewDelegate {
+    func watchVideo()
+}
 
 class ChapterView: UIScrollView {
     
+    var chapterDelegate: ChapterViewDelegate!
     let paragraph = NSMutableParagraphStyle()
     let edgeMargin: CGFloat = UIScreen.main.bounds.width * 0.024
     let screenWidth = UIScreen.main.bounds.width
@@ -854,6 +860,6 @@ class ChapterView: UIScrollView {
     }
     
     func watchVideo() {
-        print("success")
+        chapterDelegate.watchVideo()
     }
 }

@@ -13,7 +13,6 @@
 		834E4D151E9FE03400A92EC3 /* NSObject-CallSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */; };
 		8366C9FB1EA008830084172E /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FA1EA008830084172E /* MenuVC.swift */; };
 		8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FC1EA00A1C0084172E /* ArticleVC.swift */; };
-		8366F68E1EBA92EF0000AC91 /* MoviePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366F68D1EBA92EF0000AC91 /* MoviePlayer.swift */; };
 		836768691EA51E9D00CEFEC3 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */; };
 		8367686A1EA51E9D00CEFEC3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */; };
 		8367686B1EA51E9D00CEFEC3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768671EA51E9D00CEFEC3 /* OpenSans-Regular.ttf */; };
@@ -44,7 +43,6 @@
 		834E4D141E9FE03400A92EC3 /* NSObject-CallSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSObject-CallSelector.swift"; path = "Extensions/NSObject-CallSelector.swift"; sourceTree = "<group>"; };
 		8366C9FA1EA008830084172E /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = Controllers/MenuVC.swift; sourceTree = "<group>"; };
 		8366C9FC1EA00A1C0084172E /* ArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleVC.swift; path = Controllers/ArticleVC.swift; sourceTree = "<group>"; };
-		8366F68D1EBA92EF0000AC91 /* MoviePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePlayer.swift; path = Views/MoviePlayer.swift; sourceTree = "<group>"; };
 		836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		836768671EA51E9D00CEFEC3 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */,
-				8366F68D1EBA92EF0000AC91 /* MoviePlayer.swift */,
 				8367686F1EA5312100CEFEC3 /* ContentsTableViewCell.swift */,
 				831BDD261EAABA2C00E8121A /* MenuTableViewCell.swift */,
 			);
@@ -334,7 +331,6 @@
 				8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */,
 				8381EFE71EA67707005AE47B /* ChapterVC.swift in Sources */,
 				83BEEE781E9FD99600CEE4EA /* ContentsVC.swift in Sources */,
-				8366F68E1EBA92EF0000AC91 /* MoviePlayer.swift in Sources */,
 				8399E3241EA5C2BF00F0225B /* UIColor-swatches.swift in Sources */,
 				8367686E1EA51F6C00CEFEC3 /* ScrollingNav.swift in Sources */,
 				83E3DDCC1E9F27130016F0B9 /* AppDelegate.swift in Sources */,
