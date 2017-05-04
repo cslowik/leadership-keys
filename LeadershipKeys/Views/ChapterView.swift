@@ -63,13 +63,15 @@ class ChapterView: UIScrollView {
         switch chapter {
         case 0:
             //MARK:- Chapter 0
-            let t1 = "Emotional Intelligence Tools to go from Good to Great Leadership"
+            let t1 = "Leadership Keys"
             titleLabel.text = t1
             addTitle(titleLabel)
             
             let movieButton = addMovieButton(after: titleLabel)
             
-            let p1 = addParagraph(after: movieButton, withText: "As leaders move up in an organization up to 90% of their success factors are in Emotional Intelligence (EI) versus Intelligence and Technical expertise. <i>(Goleman, 2006)</i> Going from good to great takes doing  5-6 competencies really well. <i>(Zenger and Folkman, 2009)</i>")
+            let h1 = addHeading(after: movieButton, level: 2, withText: "Emotional Intelligence Tools to go from Good to Great Leadership")
+            
+            let p1 = addParagraph(after: h1, withText: "As leaders move up in an organization up to 90% of their success factors are in Emotional Intelligence (EI) versus Intelligence and Technical expertise. <i>(Goleman, 2006)</i> Going from good to great takes doing  5-6 competencies really well. <i>(Zenger and Folkman, 2009)</i>")
             
             let p2 = addParagraph(after: p1, withText: "Below are tools that will assist you in becoming a Star Performer. Use these tools to prepare, practice, inform and perform.")
             
@@ -367,9 +369,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
-            
-            let l1 = addList(after: movieButton,
+            let l1 = addList(after: titleLabel,
                              withItems: ["Communicate your thinking rung by rung.",
                                          "Challenge others if they are at the top of the ladder."],
                              listStyle: .bullet)

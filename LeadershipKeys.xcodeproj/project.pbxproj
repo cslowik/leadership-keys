@@ -14,6 +14,8 @@
 		8366C9FB1EA008830084172E /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FA1EA008830084172E /* MenuVC.swift */; };
 		8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FC1EA00A1C0084172E /* ArticleVC.swift */; };
 		8366F6901EBA988D0000AC91 /* EmailShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366F68F1EBA988D0000AC91 /* EmailShare.swift */; };
+		8366F6921EBA9E920000AC91 /* FreeToolsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366F6911EBA9E920000AC91 /* FreeToolsVC.swift */; };
+		8366F6941EBAEAE50000AC91 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366F6931EBAEAE50000AC91 /* AboutVC.swift */; };
 		836768691EA51E9D00CEFEC3 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */; };
 		8367686A1EA51E9D00CEFEC3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */; };
 		8367686B1EA51E9D00CEFEC3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768671EA51E9D00CEFEC3 /* OpenSans-Regular.ttf */; };
@@ -45,6 +47,8 @@
 		8366C9FA1EA008830084172E /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = Controllers/MenuVC.swift; sourceTree = "<group>"; };
 		8366C9FC1EA00A1C0084172E /* ArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleVC.swift; path = Controllers/ArticleVC.swift; sourceTree = "<group>"; };
 		8366F68F1EBA988D0000AC91 /* EmailShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailShare.swift; path = Utility/EmailShare.swift; sourceTree = "<group>"; };
+		8366F6911EBA9E920000AC91 /* FreeToolsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FreeToolsVC.swift; path = Controllers/FreeToolsVC.swift; sourceTree = "<group>"; };
+		8366F6931EBAEAE50000AC91 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutVC.swift; path = Controllers/AboutVC.swift; sourceTree = "<group>"; };
 		836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		836768671EA51E9D00CEFEC3 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -136,10 +140,12 @@
 			children = (
 				83BEEE7B1E9FD9F400CEE4EA /* MainVC.swift */,
 				8367686D1EA51F6C00CEFEC3 /* ScrollingNav.swift */,
+				8366F6931EBAEAE50000AC91 /* AboutVC.swift */,
 				8366C9FC1EA00A1C0084172E /* ArticleVC.swift */,
 				8381EFE61EA67707005AE47B /* ChapterVC.swift */,
 				83BEEE771E9FD99600CEE4EA /* ContentsVC.swift */,
 				8366C9FA1EA008830084172E /* MenuVC.swift */,
+				8366F6911EBA9E920000AC91 /* FreeToolsVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -333,10 +339,12 @@
 				8399E3221EA5C2AE00F0225B /* UIFont-textStyles.swift in Sources */,
 				8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */,
 				8381EFE71EA67707005AE47B /* ChapterVC.swift in Sources */,
+				8366F6941EBAEAE50000AC91 /* AboutVC.swift in Sources */,
 				83BEEE781E9FD99600CEE4EA /* ContentsVC.swift in Sources */,
 				8399E3241EA5C2BF00F0225B /* UIColor-swatches.swift in Sources */,
 				8367686E1EA51F6C00CEFEC3 /* ScrollingNav.swift in Sources */,
 				83E3DDCC1E9F27130016F0B9 /* AppDelegate.swift in Sources */,
+				8366F6921EBA9E920000AC91 /* FreeToolsVC.swift in Sources */,
 				831BDD271EAABA2C00E8121A /* MenuTableViewCell.swift in Sources */,
 				8366C9FB1EA008830084172E /* MenuVC.swift in Sources */,
 				833CB8D91EAFABDE008CC182 /* UITextView-configuration.swift in Sources */,

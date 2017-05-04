@@ -53,7 +53,7 @@
                 <navigationController navigationBarHidden="YES" id="LXy-9o-6V6" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFb-qT-HMi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EFb-qT-HMi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -153,7 +153,7 @@
                 <navigationController navigationBarHidden="YES" id="vp4-8y-PPC" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nft-vG-4YD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Nft-vG-4YD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
