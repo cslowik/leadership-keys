@@ -14,7 +14,6 @@
 		8366C9FB1EA008830084172E /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FA1EA008830084172E /* MenuVC.swift */; };
 		8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366C9FC1EA00A1C0084172E /* ArticleVC.swift */; };
 		8366F6901EBA988D0000AC91 /* EmailShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366F68F1EBA988D0000AC91 /* EmailShare.swift */; };
-		8366F6921EBA9E920000AC91 /* FreeToolsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366F6911EBA9E920000AC91 /* FreeToolsVC.swift */; };
 		8366F6941EBAEAE50000AC91 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366F6931EBAEAE50000AC91 /* AboutVC.swift */; };
 		836768691EA51E9D00CEFEC3 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */; };
 		8367686A1EA51E9D00CEFEC3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */; };
@@ -27,7 +26,6 @@
 		8399E3241EA5C2BF00F0225B /* UIColor-swatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399E3231EA5C2BF00F0225B /* UIColor-swatches.swift */; };
 		839EFA4B1EAE8A3E003DDF39 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */; };
 		83BEEE781E9FD99600CEE4EA /* ContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEEE771E9FD99600CEE4EA /* ContentsVC.swift */; };
-		83BEEE7C1E9FD9F400CEE4EA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BEEE7B1E9FD9F400CEE4EA /* MainVC.swift */; };
 		83CA2E3A1EA68D3E00EA5D95 /* Contents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83CA2E391EA68D3E00EA5D95 /* Contents.plist */; };
 		83CA2E3D1EA68E7700EA5D95 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA2E3C1EA68E7700EA5D95 /* FileHelper.swift */; };
 		83E3DDCC1E9F27130016F0B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3DDCB1E9F27130016F0B9 /* AppDelegate.swift */; };
@@ -47,7 +45,6 @@
 		8366C9FA1EA008830084172E /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = Controllers/MenuVC.swift; sourceTree = "<group>"; };
 		8366C9FC1EA00A1C0084172E /* ArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleVC.swift; path = Controllers/ArticleVC.swift; sourceTree = "<group>"; };
 		8366F68F1EBA988D0000AC91 /* EmailShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailShare.swift; path = Utility/EmailShare.swift; sourceTree = "<group>"; };
-		8366F6911EBA9E920000AC91 /* FreeToolsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FreeToolsVC.swift; path = Controllers/FreeToolsVC.swift; sourceTree = "<group>"; };
 		8366F6931EBAEAE50000AC91 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutVC.swift; path = Controllers/AboutVC.swift; sourceTree = "<group>"; };
 		836768651EA51E9D00CEFEC3 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		836768661EA51E9D00CEFEC3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -60,7 +57,6 @@
 		8399E3231EA5C2BF00F0225B /* UIColor-swatches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor-swatches.swift"; path = "Extensions/UIColor-swatches.swift"; sourceTree = "<group>"; };
 		839EFA4A1EAE8A3E003DDF39 /* ChapterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChapterView.swift; path = Views/ChapterView.swift; sourceTree = "<group>"; };
 		83BEEE771E9FD99600CEE4EA /* ContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentsVC.swift; path = Controllers/ContentsVC.swift; sourceTree = "<group>"; };
-		83BEEE7B1E9FD9F400CEE4EA /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainVC.swift; path = Controllers/MainVC.swift; sourceTree = "<group>"; };
 		83CA2E391EA68D3E00EA5D95 /* Contents.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Contents.plist; sourceTree = "<group>"; };
 		83CA2E3C1EA68E7700EA5D95 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileHelper.swift; path = Utility/FileHelper.swift; sourceTree = "<group>"; };
 		83E3DDC81E9F27130016F0B9 /* LeadershipKeys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeadershipKeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,14 +134,12 @@
 		83BEEE791E9FD9A300CEE4EA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				83BEEE7B1E9FD9F400CEE4EA /* MainVC.swift */,
 				8367686D1EA51F6C00CEFEC3 /* ScrollingNav.swift */,
 				8366F6931EBAEAE50000AC91 /* AboutVC.swift */,
 				8366C9FC1EA00A1C0084172E /* ArticleVC.swift */,
 				8381EFE61EA67707005AE47B /* ChapterVC.swift */,
 				83BEEE771E9FD99600CEE4EA /* ContentsVC.swift */,
 				8366C9FA1EA008830084172E /* MenuVC.swift */,
-				8366F6911EBA9E920000AC91 /* FreeToolsVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -239,7 +233,7 @@
 				TargetAttributes = {
 					83E3DDC71E9F27130016F0B9 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 8U4R9Q4J3X;
+						DevelopmentTeam = 75NPGEFXH4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -334,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				834E4D151E9FE03400A92EC3 /* NSObject-CallSelector.swift in Sources */,
-				83BEEE7C1E9FD9F400CEE4EA /* MainVC.swift in Sources */,
 				839EFA4B1EAE8A3E003DDF39 /* ChapterView.swift in Sources */,
 				8399E3221EA5C2AE00F0225B /* UIFont-textStyles.swift in Sources */,
 				8366C9FD1EA00A1C0084172E /* ArticleVC.swift in Sources */,
@@ -344,7 +337,6 @@
 				8399E3241EA5C2BF00F0225B /* UIColor-swatches.swift in Sources */,
 				8367686E1EA51F6C00CEFEC3 /* ScrollingNav.swift in Sources */,
 				83E3DDCC1E9F27130016F0B9 /* AppDelegate.swift in Sources */,
-				8366F6921EBA9E920000AC91 /* FreeToolsVC.swift in Sources */,
 				831BDD271EAABA2C00E8121A /* MenuTableViewCell.swift in Sources */,
 				8366C9FB1EA008830084172E /* MenuVC.swift in Sources */,
 				833CB8D91EAFABDE008CC182 /* UITextView-configuration.swift in Sources */,
@@ -475,12 +467,16 @@
 			baseConfigurationReference = 0096324354548C9D90A5F78F /* Pods-LeadershipKeys.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8U4R9Q4J3X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 75NPGEFXH4;
 				INFOPLIST_FILE = LeadershipKeys/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.slowik.LeadershipKeys;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sixvoices.leadershipkeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -489,12 +485,15 @@
 			baseConfigurationReference = 8E363A50A00DF66200026DEE /* Pods-LeadershipKeys.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8U4R9Q4J3X;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 75NPGEFXH4;
 				INFOPLIST_FILE = LeadershipKeys/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.slowik.LeadershipKeys;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sixvoices.leadershipkeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -28,12 +28,13 @@ class ChapterView: UIScrollView {
     let edgeMargin: CGFloat = UIScreen.main.bounds.width * 0.024
     let screenWidth = UIScreen.main.bounds.width
     let cellHeight: CGFloat = 56.0
+    var cellWidth: CGFloat = 0
     var videoURL: String?
 
     init(frame: CGRect, chapter: Int) {
         super.init(frame: frame)
         videoURL = FileHelper.main.chapters[chapter]["video"]
-        loadVideo()
+        cellWidth = (screenWidth - (edgeMargin * 2)) / 2
         layoutChapter(chapter)
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
@@ -41,13 +42,6 @@ class ChapterView: UIScrollView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    //MARK:- Video Utility
-    func loadVideo() {
-        if videoURL != nil {
-            
-        }
     }
 
     //MARK:- Chapter Layouts
@@ -580,24 +574,25 @@ class ChapterView: UIScrollView {
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
+            make.top.equalToSuperview().inset(edgeMargin)
             make.centerX.equalToSuperview()
         }
     }
     
     func addMovieButton(after: UIView) -> UIView {
         let buttonView = UIView()
-        let movieButton = UIButton(frame: CGRect(x: 0, y: 0, width: screenWidth - (edgeMargin * 2), height: 80))
+        let movieButton = UIButton(frame: CGRect(x: 0, y: 0, width: screenWidth - (edgeMargin * 2), height: 64))
         movieButton.setTitle("Watch Video", for: .normal)
         movieButton.setTitleColor(UIColor.ebonyClay, for: .normal)
         buttonView.addSubview(movieButton)
-        buttonView.layer.cornerRadius = 4
+        buttonView.layer.cornerRadius = 8
         buttonView.layer.borderWidth = 1
         buttonView.layer.borderColor = UIColor.loblolly.cgColor
         addSubview(buttonView)
         buttonView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
-            make.height.equalTo(80)
+            make.height.equalTo(64)
             make.top.equalTo(after.snp.bottom).offset(edgeMargin * 2)
         }
         movieButton.addTarget(self, action: #selector(watchVideo), for: .touchUpInside)
@@ -606,13 +601,12 @@ class ChapterView: UIScrollView {
     
     func addHeading(after: UIView, level: Int, withText hText: String) -> UIView {
         var headingStyle: Style
-        var topMargin: CGFloat = 0
+        var topMargin: CGFloat = edgeMargin
         switch level {
         case 1:
             headingStyle = titleStyle
         case 2:
             headingStyle = subtitleStyle
-            topMargin = edgeMargin
         case 3:
             headingStyle = h3
         default:
@@ -629,7 +623,7 @@ class ChapterView: UIScrollView {
         headingView.snp.makeConstraints({ (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
-            make.top.equalTo(after.snp.bottom).offset(topMargin * 2)
+            make.top.equalTo(after.snp.bottom).offset(topMargin)
         })
         return headingView
     }
@@ -770,7 +764,7 @@ class ChapterView: UIScrollView {
         tableView.snp.makeConstraints({ (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
-            make.top.equalTo(after.snp.bottom)
+            make.top.equalTo(after.snp.bottom).offset(edgeMargin)
             make.height.equalTo(CGFloat(cells.count) * cellHeight)
         })
         
@@ -794,7 +788,12 @@ class ChapterView: UIScrollView {
         // make a view for each item in data array
         var rows: [UIView] = []
         
+        var tableHeight:CGFloat = 0
+        
         for row in data {
+            
+            var rowHeight:CGFloat = 0
+            
             var columns: [UIView] = []
             for cellText in row {
                 // make styled text
@@ -807,27 +806,40 @@ class ChapterView: UIScrollView {
                 let cellTextView = UILabel()
                 cellTextView.attributedText = styledText
                 cellTextView.numberOfLines = 0
+                //cellTextView.lineBreakMode = .byWordWrapping
                 
                 // create view to hold textview and draw border
                 let cellView = UIView()
                 cellView.layer.borderColor = UIColor.loblolly.cgColor
                 cellView.layer.borderWidth = 0.5
                 cellView.addSubview(cellTextView)
-                let calcCellHeight = cellHeight
+                
+                // find max label size
+                let maxLabelSize = CGSize(width: cellWidth - (edgeMargin * 2), height: CGFloat.greatestFiniteMagnitude)
+                let expectedLabelSize = styledText.boundingRect(with: maxLabelSize, options:[.usesLineFragmentOrigin, .usesFontLeading], context: nil).size.height + (edgeMargin * 2)
+                let finalLabelSize = max(expectedLabelSize, cellHeight)
+                
                 cellTextView.snp.makeConstraints({ (make) in
                     make.left.equalToSuperview().inset(edgeMargin)
                     make.right.equalToSuperview().inset(edgeMargin)
-                    make.height.equalTo(calcCellHeight)
-                    make.top.equalToSuperview()
+                    make.center.equalToSuperview()
                 })
+                
                 columns.append(cellView)
+                if finalLabelSize > rowHeight {
+                    rowHeight = finalLabelSize
+                }
             }
             let rowTable = UIStackView(arrangedSubviews: columns)
             rowTable.axis = .horizontal
             rowTable.distribution = .fillEqually
             rowTable.alignment = .fill
             rowTable.spacing = 0
+            rowTable.snp.makeConstraints({ (make) in
+                make.height.equalTo(rowHeight)
+            })
             rows.append(rowTable)
+            tableHeight = tableHeight + rowHeight
         }
         
         let tableView = UIView()
@@ -839,13 +851,13 @@ class ChapterView: UIScrollView {
         tableView.snp.makeConstraints({ (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
-            make.top.equalTo(after.snp.bottom)
-            make.height.equalTo(CGFloat(rows.count) * cellHeight)
+            make.top.equalTo(after.snp.bottom).offset(edgeMargin)
+            make.height.equalTo(tableHeight)
         })
         
         let table = UIStackView(arrangedSubviews: rows)
         table.axis = .vertical
-        table.distribution = .fillEqually
+        table.distribution = .equalSpacing
         table.alignment = .fill
         table.spacing = 0
         tableView.addSubview(table)
@@ -853,7 +865,7 @@ class ChapterView: UIScrollView {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.top.equalToSuperview()
-            make.height.equalTo(CGFloat(rows.count) * cellHeight)
+            make.height.equalToSuperview()
         })
         
         return tableView

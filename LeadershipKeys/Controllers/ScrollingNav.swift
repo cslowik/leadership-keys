@@ -8,9 +8,10 @@
 
 import UIKit
 import MessageUI
-//import AMScrollingNavbar
+import SideMenu
+import SafariServices
 
-class ScrollingNav: UINavigationController, MenuDelegate, MFMailComposeViewControllerDelegate {
+class ScrollingNav: UINavigationController, MenuDelegate, MFMailComposeViewControllerDelegate, SFSafariViewControllerDelegate {
     
     var menuIndex: Int = 0
     
@@ -21,7 +22,14 @@ class ScrollingNav: UINavigationController, MenuDelegate, MFMailComposeViewContr
         navigationBar.tintColor = UIColor.loblolly
         navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.navFont,
                                              NSForegroundColorAttributeName: UIColor.ebonyClay]
+        FileHelper.main.load()
+        SideMenuManager.menuWidth = UIScreen.main.bounds.width - 48
+        SideMenuManager.menuEnableSwipeGestures = false
         
+        SideMenuManager.menuAnimationBackgroundColor = UIColor.clear
+        SideMenuManager.menuAnimationPresentDuration = 0.5
+        SideMenuManager.menuAnimationUsingSpringWithDamping = 1
+        SideMenuManager.menuAnimationInitialSpringVelocity = 0
     }
     
     //MARK:- Sharing UI
@@ -40,8 +48,10 @@ class ScrollingNav: UINavigationController, MenuDelegate, MFMailComposeViewContr
     }
     
     func freeTools() {
-        let toolsVC = FreeToolsVC()
-        show(toolsVC, sender: self)
+        let leadershipURL = URL(string: "http://www.truenorthleadership.com/ei-leadership-tools/")!
+        let safariController = SFSafariViewController(url: leadershipURL)
+        safariController.delegate = self
+        self.present(safariController, animated: true, completion: nil)
     }
     
     func about() {
@@ -52,20 +62,30 @@ class ScrollingNav: UINavigationController, MenuDelegate, MFMailComposeViewContr
     ////MARK: - MenuDelegate
     
     func didSelectItem(_ index: Int, sender: MenuVC) {
-        sender.dismiss(animated: true, completion: nil)
-        print(index)
         switch index {
         case 1:
+            sender.dismiss(animated: true, completion: nil)
             shareViaEmail()
             break
         case 2:
-            freeTools()
+            sender.dismiss(animated: true, completion: nil)
+            callSelector(#selector(freeTools), object: self, delay: 0.5)
             break
         case 3:
+            sender.dismiss(animated: true, completion: nil)
             about()
             break
         default:
+            sender.dismiss(animated: true, completion: nil)
             break
         }
+    }
+    
+    ////MARK: - SFSafariViewControllerDelegate
+    func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
+        print("loaded")
+    }
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        print("finish")
     }
 }
