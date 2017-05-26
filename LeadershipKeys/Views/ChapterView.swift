@@ -61,7 +61,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = t1
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 0)
             
             let h1 = addHeading(after: movieButton, level: 2, withText: "Emotional Intelligence Tools to go from Good to Great Leadership")
             
@@ -95,7 +95,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 1)
             
             let p1 = addParagraph(after: movieButton, withText: "Leadership has a rhythm and beat to it. You have to know the right time to step in and when to step out. Star leaders feel the beat and make the appropriate steps. They don’t take their direct reports problems or \"monkeys\", but help them deal with their \"monkeys\" with support and resources. Rank yourself on each of the steps, on a 1-10. Practice the steps which will help you the most to become good at all the steps.")
 
@@ -145,7 +145,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 2)
             
             let p1 = addParagraph(after: movieButton, withText: "It is important to be very clear how you delegate. The following steps will help make you sure you covered all the key points.")
             
@@ -198,7 +198,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 3)
             
             let h1 = addHeading(after: movieButton, level: 2, withText: "<hb>S</hb> - Set the Stage")
             let h2 = addHeading(after: h1, level: 3, withText: "Intention, Readiness to listen")
@@ -266,7 +266,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 4)
             
             let p1 = addParagraph(after: movieButton, withText: "When coaching, it is important to save your advice or feedback to the end. Many managers in wanting to be helpful and to do their job well, go to step 5 immediately and the employee doesn’t feel heard or honored. You may have only thought about their problem for 3 seconds and give your answer, when your employee could have spent hours or days thinking about this issue. Often they don’t want an answer but validation for their thinking. Use the following steps:")
             
@@ -332,7 +332,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 5)
             
             let l1 = addList(after: movieButton,
                              withItems: ["Are there biases in your thinking?",
@@ -415,7 +415,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 7)
             
             let p1 = addParagraph(after: movieButton, withText: "To understand your emotions and better manage them, use these questions. Use this audit when you feel yourself getting upset, frustrated, or your triggers got activated. Wait 5 seconds till you get an answer to each question.")
             
@@ -441,7 +441,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 8)
             
             let h0 = addHeading(after: movieButton, level: 3, withText: "Leadership and Level of Involvement")
             
@@ -504,7 +504,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 9)
             
             let intro = addParagraph(after: movieButton, withText: "When dealing with your supervisor or key customer, stakeholder or partner, it is important to understand their preferences and needs. This will help you align your performance to be viewed as a star by them. Below are questions and conversations to assist you.")
             
@@ -537,7 +537,7 @@ class ChapterView: UIScrollView {
             titleLabel.text = title
             addTitle(titleLabel)
             
-            let movieButton = addMovieButton(after: titleLabel)
+            let movieButton = addMovieButton(after: titleLabel, forChapter: 10)
             
             let intro = addParagraph(after: movieButton, withText: "The word <i>intelligence</i> comes from a Latin derivation, meaning \"entering through the lines.\" As a leader, people are always reading into what you are saying or not saying. They fill in the white space between the lines in moments. The bold lines indicate what was said.")
             
@@ -579,29 +579,23 @@ class ChapterView: UIScrollView {
         }
     }
     
-    func addMovieButton(after: UIView) -> UIView {
-        let buttonView = UIView()
-        let movieButton = UIButton(frame: CGRect(x: 0, y: 0, width: screenWidth - (edgeMargin * 2), height: 64))
-        movieButton.setTitle("Watch Video", for: .normal)
-        movieButton.setTitleColor(UIColor.ebonyClay, for: .normal)
-        buttonView.addSubview(movieButton)
-        buttonView.layer.cornerRadius = 8
-        buttonView.layer.borderWidth = 1
-        buttonView.layer.borderColor = UIColor.loblolly.cgColor
-        addSubview(buttonView)
-        buttonView.snp.makeConstraints { (make) in
+    func addMovieButton(after: UIView, forChapter chapter: Int) -> UIView {
+        let movieButton = UIButton(frame: CGRect(x: 0, y: 0, width: 375, height: 135))
+        movieButton.setImage(UIImage(named: "video\(chapter)"), for: UIControlState.normal)
+        addSubview(movieButton)
+        movieButton.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(edgeMargin)
             make.right.equalToSuperview().inset(edgeMargin)
-            make.height.equalTo(64)
+            make.height.equalTo(135*((screenWidth-(edgeMargin*2))/screenWidth))
             make.top.equalTo(after.snp.bottom).offset(edgeMargin * 2)
         }
         movieButton.addTarget(self, action: #selector(watchVideo), for: .touchUpInside)
-        return buttonView
+        return movieButton
     }
     
     func addHeading(after: UIView, level: Int, withText hText: String) -> UIView {
         var headingStyle: Style
-        var topMargin: CGFloat = edgeMargin
+        let topMargin: CGFloat = edgeMargin
         switch level {
         case 1:
             headingStyle = titleStyle
